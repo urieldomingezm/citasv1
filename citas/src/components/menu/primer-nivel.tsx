@@ -18,11 +18,11 @@ const MenuPrimerNivel: React.FC<MenuPrimerNivelProps> = ({ onItemClick, onLoginC
     };
 
     return (
-        <ul className="flex flex-col p-4 space-y-2">
+        <ul className="flex flex-col p-2 space-y-1">
             <li>
                 <a
                     href="#"
-                    className="block py-2 px-4 rounded hover:bg-gray-200 flex items-center space-x-2"
+                    className="block py-2 px-3 rounded hover:bg-gray-200 flex items-center space-x-2"
                     onClick={onItemClick}
                 >
                     <i className="bi bi-house"></i>
@@ -31,7 +31,7 @@ const MenuPrimerNivel: React.FC<MenuPrimerNivelProps> = ({ onItemClick, onLoginC
             </li>
             <li>
                 <button
-                    className="w-full text-left block py-2 px-4 rounded hover:bg-gray-200 flex items-center space-x-2"
+                    className="w-full text-left block py-2 px-3 rounded hover:bg-gray-200 flex items-center space-x-2"
                     onClick={handleLoginClick}
                 >
                     <i className="bi bi-box-arrow-in-right"></i>
@@ -40,7 +40,7 @@ const MenuPrimerNivel: React.FC<MenuPrimerNivelProps> = ({ onItemClick, onLoginC
             </li>
             <li>
                 <button
-                    className="w-full text-left block py-2 px-4 rounded hover:bg-gray-200 flex items-center space-x-2"
+                    className="w-full text-left block py-2 px-3 rounded hover:bg-gray-200 flex items-center space-x-2"
                     onClick={handleRegisterClick}
                 >
                     <i className="bi bi-person-plus"></i>

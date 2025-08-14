@@ -8,14 +8,14 @@ const HeaderNavbar: React.FC = () => {
     const [registerModalOpen, setRegisterModalOpen] = useState(false);
 
     return (
-        <header className="bg-gray-100 text-gray-900 p-4 shadow flex items-center justify-between relative">
-            <h1 className="text-2xl font-bold">Citas</h1>
+        <header className="bg-gray-100 text-gray-900 py-2 px-4 shadow flex items-center justify-between relative">
+            <h1 className="text-xl font-bold">Citas</h1>
             <button
                 className="p-2 z-20"
                 onClick={() => setOpen(true)}
                 aria-label="Abrir menú"
             >
-                <i className="bi bi-list" style={{ fontSize: '28px' }}></i>
+                <i className="bi bi-list" style={{ fontSize: '24px' }}></i>
             </button>
             {/* Offcanvas */}
             <nav className={`fixed top-0 right-0 h-full w-64 bg-white text-gray-800 shadow-lg transform ${open ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-200 ease-in-out z-30`}>
