@@ -2,9 +2,21 @@ import React from 'react';
 
 interface MenuPrimerNivelProps {
     onItemClick?: () => void;
+    onLoginClick?: () => void;
+    onRegisterClick?: () => void;
 }
 
-const MenuPrimerNivel: React.FC<MenuPrimerNivelProps> = ({ onItemClick }) => {
+const MenuPrimerNivel: React.FC<MenuPrimerNivelProps> = ({ onItemClick, onLoginClick, onRegisterClick }) => {
+    const handleLoginClick = () => {
+        onLoginClick?.();
+        onItemClick?.();
+    };
+
+    const handleRegisterClick = () => {
+        onRegisterClick?.();
+        onItemClick?.();
+    };
+
     return (
         <ul className="flex flex-col p-4 space-y-2">
             <li>
@@ -18,24 +30,22 @@ const MenuPrimerNivel: React.FC<MenuPrimerNivelProps> = ({ onItemClick }) => {
                 </a>
             </li>
             <li>
-                <a
-                    href="#"
-                    className="block py-2 px-4 rounded hover:bg-gray-200 flex items-center space-x-2"
-                    onClick={onItemClick}
+                <button
+                    className="w-full text-left block py-2 px-4 rounded hover:bg-gray-200 flex items-center space-x-2"
+                    onClick={handleLoginClick}
                 >
                     <i className="bi bi-box-arrow-in-right"></i>
                     <span>Iniciar sesión</span>
-                </a>
+                </button>
             </li>
             <li>
-                <a
-                    href="#"
-                    className="block py-2 px-4 rounded hover:bg-gray-200 flex items-center space-x-2"
-                    onClick={onItemClick}
+                <button
+                    className="w-full text-left block py-2 px-4 rounded hover:bg-gray-200 flex items-center space-x-2"
+                    onClick={handleRegisterClick}
                 >
                     <i className="bi bi-person-plus"></i>
                     <span>Registrarse</span>
-                </a>
+                </button>
             </li>
         </ul>
     );

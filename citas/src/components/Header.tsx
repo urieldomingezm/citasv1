@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import MenuPrimerNivel from './menu/primer-nivel';
+import { LoginModal, RegisterModal } from './modales';
 
 const HeaderNavbar: React.FC = () => {
     const [open, setOpen] = useState(false);
+    const [loginModalOpen, setLoginModalOpen] = useState(false);
+    const [registerModalOpen, setRegisterModalOpen] = useState(false);
 
     return (
         <header className="bg-gray-100 text-gray-900 p-4 shadow flex items-center justify-between relative">
@@ -26,7 +29,11 @@ const HeaderNavbar: React.FC = () => {
                         <i className="bi bi-x" style={{ fontSize: '24px' }}></i>
                     </button>
                 </div>
-                <MenuPrimerNivel onItemClick={() => setOpen(false)} />
+                <MenuPrimerNivel 
+                    onItemClick={() => setOpen(false)}
+                    onLoginClick={() => setLoginModalOpen(true)}
+                    onRegisterClick={() => setRegisterModalOpen(true)}
+                />
             </nav>
             {/* Overlay */}
             {open && (
@@ -35,6 +42,16 @@ const HeaderNavbar: React.FC = () => {
                     onClick={() => setOpen(false)}
                 />
             )}
+            
+            {/* Modales */}
+            <LoginModal 
+                isOpen={loginModalOpen} 
+                onClose={() => setLoginModalOpen(false)} 
+            />
+            <RegisterModal 
+                isOpen={registerModalOpen} 
+                onClose={() => setRegisterModalOpen(false)} 
+            />
         </header>
     );
 };
