@@ -50,12 +50,7 @@ const Home: React.FC = () => (
         </button>
       </div>
     </div>
-
-    {/* Call to action */}
-    <div className="text-center mt-12">
-      <span className="inline-block text-pink-400 text-4xl animate-bounce">💕</span>
-      <p className="mt-3 text-gray-600">¡El amor está a un clic de distancia!</p>
-    </div>
+    
   </section>
 );
 
