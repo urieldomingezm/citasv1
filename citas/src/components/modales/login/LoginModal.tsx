@@ -1,19 +1,59 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../context/AuthContext';
+import Alert from '../../Alert';
 
 interface LoginModalProps {
     isOpen: boolean;
     onClose: () => void;
+    onLoginSuccess?: () => void;
 }
 
-const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
+const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLoginSuccess }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [showAlert, setShowAlert] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
+    const [alertType, setAlertType] = useState<'success' | 'error'>('success');
+    const [isLoading, setIsLoading] = useState(false);
+    
+    const { login } = useAuth();
+    const navigate = useNavigate();
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Aquí irá la lógica de inicio de sesión
-        console.log('Login:', { username, password });
-        onClose();
+        setIsLoading(true);
+        
+        try {
+            const success = await login({ username, password });
+            
+            if (success) {
+                setAlertType('success');
+                setAlertMessage('¡Inicio de sesión exitoso! Redirigiendo... 🚀');
+                setShowAlert(true);
+                
+                // Después de 2 segundos, navegar a la página de usuario
+                setTimeout(() => {
+                    onClose();
+                    onLoginSuccess?.();
+                    navigate('/usuario/home');
+                    // Reset form
+                    setUsername('');
+                    setPassword('');
+                    setShowAlert(false);
+                }, 2000);
+            } else {
+                setAlertType('error');
+                setAlertMessage('Credenciales incorrectas. Intenta de nuevo.');
+                setShowAlert(true);
+            }
+        } catch (error) {
+            setAlertType('error');
+            setAlertMessage('Error al iniciar sesión. Intenta de nuevo.');
+            setShowAlert(true);
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     if (!isOpen) return null;
@@ -26,6 +66,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
                     <button
                         onClick={onClose}
                         className="text-gray-400 hover:text-gray-600"
+                        disabled={isLoading}
                     >
                         <i className="bi bi-x" style={{ fontSize: '24px' }}></i>
                     </button>
@@ -45,6 +86,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
                             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="usuario123"
                             required
+                            disabled={isLoading}
                         />
                     </div>
                     
@@ -61,6 +103,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
                             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="Tu contraseña"
                             required
+                            disabled={isLoading}
                         />
                     </div>
                     
@@ -69,19 +112,40 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
                             type="button"
                             onClick={onClose}
                             className="px-4 py-2 text-gray-600 bg-gray-200 rounded-md hover:bg-gray-300"
+                            disabled={isLoading}
                         >
                             Cancelar
                         </button>
                         <button
                             type="submit"
-                            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center"
+                            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center disabled:bg-blue-400"
+                            disabled={isLoading}
                         >
-                            <i className="bi bi-box-arrow-in-right mr-2"></i>
-                            Iniciar Sesión
+                            {isLoading ? (
+                                <>
+                                    <i className="bi bi-arrow-clockwise mr-2 animate-spin"></i>
+                                    Iniciando...
+                                </>
+                            ) : (
+                                <>
+                                    <i className="bi bi-box-arrow-in-right mr-2"></i>
+                                    Iniciar Sesión
+                                </>
+                            )}
                         </button>
                     </div>
                 </form>
             </div>
+            
+            {/* Alerta de éxito/error */}
+            <Alert
+                type={alertType}
+                message={alertMessage}
+                isVisible={showAlert}
+                onClose={() => setShowAlert(false)}
+                autoClose={true}
+                duration={alertType === 'success' ? 3000 : 5000}
+            />
         </div>
     );
 };

@@ -5,7 +5,7 @@ const Home: React.FC = () => (
     {/* Hero */}
     <div className="max-w-4xl mx-auto text-center mb-16">
       <h1 className="text-4xl md:text-5xl font-extrabold text-pink-600 mb-4">
-        Bienvenido a <span className="text-pink-500">Citas</span>
+        Bienvenido a <span className="text-pink-500">MorrysMatch</span>
       </h1>
       <p className="text-lg text-gray-600 mb-4">
         ¡Encuentra tu pareja ideal y vive experiencias únicas en un ambiente seguro y divertido!
@@ -66,7 +66,7 @@ const Home: React.FC = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white rounded-2xl p-6 shadow hover:shadow-lg transition">
           <p className="text-gray-600 italic mb-4">
-            “Nunca imaginé encontrar a mi alma gemela tan rápido. Llevamos 2 años juntos gracias a Citas.”
+            “Nunca imaginé encontrar a mi alma gemela tan rápido. Llevamos 2 años juntos gracias a MorrysMatch.”
           </p>
           <p className="text-pink-500 font-semibold">María & Luis</p>
         </div>
