@@ -57,7 +57,10 @@ class AuthService {
 
   // Simular login (solo frontend)
   async login(credentials: LoginRequest): Promise<ApiResponse<AuthResponse>> {
-    console.log('🚀 MOCK LOGIN:', credentials);
+    // En modo desarrollo, mostrar información de debug de forma más elegante
+    if (import.meta.env.DEV) {
+      console.debug('🔐 Mock Login:', { username: credentials.username, hasPassword: !!credentials.password });
+    }
     
     // Simular delay de red
     await this.delay(1000);
@@ -97,7 +100,9 @@ class AuthService {
 
   // Simular registro (solo frontend)
   async register(userData: RegisterRequest): Promise<ApiResponse<AuthResponse>> {
-    console.log('🚀 MOCK REGISTER:', userData);
+    if (import.meta.env.DEV) {
+      console.debug('🔐 Mock Register:', { username: userData.username, hasEmail: !!userData.email });
+    }
     
     // Simular delay de red
     await this.delay(1500);
@@ -132,7 +137,9 @@ class AuthService {
 
   // Simular logout
   async logout(): Promise<ApiResponse<void>> {
-    console.log('🚀 MOCK LOGOUT');
+    if (import.meta.env.DEV) {
+      console.debug('🔐 Mock Logout');
+    }
     
     // Simular delay
     await this.delay(500);
@@ -148,7 +155,9 @@ class AuthService {
 
   // Obtener perfil mock
   async getProfile(): Promise<ApiResponse<User>> {
-    console.log('🚀 MOCK GET PROFILE');
+    if (import.meta.env.DEV) {
+      console.debug('🔐 Mock Get Profile');
+    }
     
     await this.delay(800);
 
@@ -169,7 +178,9 @@ class AuthService {
 
   // Renovar token mock
   async refreshToken(): Promise<ApiResponse<AuthResponse>> {
-    console.log('🚀 MOCK REFRESH TOKEN');
+    if (import.meta.env.DEV) {
+      console.debug('🔐 Mock Refresh Token');
+    }
     
     await this.delay(600);
 
@@ -248,7 +259,9 @@ class AuthService {
 
   // Simular verificación de salud
   async checkHealth(): Promise<{ rest: boolean; soap: boolean }> {
-    console.log('🚀 MOCK HEALTH CHECK');
+    if (import.meta.env.DEV) {
+      console.debug('🔐 Mock Health Check');
+    }
     await this.delay(300);
     
     return {
@@ -259,7 +272,9 @@ class AuthService {
 
   // Mock para cambiar protocolo (no hace nada por ahora)
   setProtocol(protocol: 'REST' | 'SOAP'): void {
-    console.log(`🚀 MOCK: Protocolo cambiado a ${protocol} (sin efecto en modo desarrollo)`);
+    if (import.meta.env.DEV) {
+      console.debug(`🔐 Mock: Protocolo cambiado a ${protocol} (sin efecto en modo desarrollo)`);
+    }
   }
 
   // Mock para estadísticas
@@ -270,16 +285,14 @@ class AuthService {
     };
   }
 
-  // Utility para simular delays de red
+  // Función helper para simular delay
   private delay(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 }
 
-// Instancia singleton
+// Crear instancia singleton
 const authService = new AuthService();
 
-// Inicializar al importar
-authService.initialize();
-
+// Exportar como default
 export default authService;
