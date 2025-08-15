@@ -57,11 +57,6 @@ class AuthService {
 
   // Simular login (solo frontend)
   async login(credentials: LoginRequest): Promise<ApiResponse<AuthResponse>> {
-    // En modo desarrollo, mostrar información de debug de forma más elegante
-    if (import.meta.env.DEV) {
-      console.debug('🔐 Mock Login:', { username: credentials.username, hasPassword: !!credentials.password });
-    }
-    
     // Simular delay de red
     await this.delay(1000);
 
@@ -100,10 +95,6 @@ class AuthService {
 
   // Simular registro (solo frontend)
   async register(userData: RegisterRequest): Promise<ApiResponse<AuthResponse>> {
-    if (import.meta.env.DEV) {
-      console.debug('🔐 Mock Register:', { username: userData.username, hasEmail: !!userData.email });
-    }
-    
     // Simular delay de red
     await this.delay(1500);
 
@@ -137,10 +128,6 @@ class AuthService {
 
   // Simular logout
   async logout(): Promise<ApiResponse<void>> {
-    if (import.meta.env.DEV) {
-      console.debug('🔐 Mock Logout');
-    }
-    
     // Simular delay
     await this.delay(500);
 
@@ -155,10 +142,6 @@ class AuthService {
 
   // Obtener perfil mock
   async getProfile(): Promise<ApiResponse<User>> {
-    if (import.meta.env.DEV) {
-      console.debug('🔐 Mock Get Profile');
-    }
-    
     await this.delay(800);
 
     if (this.isLoggedIn && this.currentUser) {
@@ -178,10 +161,6 @@ class AuthService {
 
   // Renovar token mock
   async refreshToken(): Promise<ApiResponse<AuthResponse>> {
-    if (import.meta.env.DEV) {
-      console.debug('🔐 Mock Refresh Token');
-    }
-    
     await this.delay(600);
 
     const refreshToken = localStorage.getItem('refresh_token');
@@ -259,9 +238,6 @@ class AuthService {
 
   // Simular verificación de salud
   async checkHealth(): Promise<{ rest: boolean; soap: boolean }> {
-    if (import.meta.env.DEV) {
-      console.debug('🔐 Mock Health Check');
-    }
     await this.delay(300);
     
     return {
@@ -272,9 +248,7 @@ class AuthService {
 
   // Mock para cambiar protocolo (no hace nada por ahora)
   setProtocol(protocol: 'REST' | 'SOAP'): void {
-    if (import.meta.env.DEV) {
-      console.debug(`🔐 Mock: Protocolo cambiado a ${protocol} (sin efecto en modo desarrollo)`);
-    }
+    // No hace nada en modo desarrollo
   }
 
   // Mock para estadísticas

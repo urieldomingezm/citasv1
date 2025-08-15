@@ -36,17 +36,6 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
             </div>
 
             <ul className="flex flex-col p-2 space-y-1">
-            {/* Dashboard */}
-            <li>
-                <a
-                    href="#"
-                    className="block py-2 px-3 rounded hover:bg-gray-200 flex items-center space-x-2"
-                    onClick={onItemClick}
-                >
-                    <i className="bi bi-speedometer2 text-blue-600"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
 
             {/* Descubrir */}
             <li>
