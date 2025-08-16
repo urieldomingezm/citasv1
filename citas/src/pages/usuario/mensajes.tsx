@@ -2,15 +2,15 @@ import React from 'react';
 
 const Mensajes: React.FC = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50">
             {/* Encabezado completamente responsivo */}
-            <section className="bg-gradient-to-r from-green-500 to-emerald-600 text-white py-4 sm:py-6 md:py-8 lg:py-12 px-2 sm:px-4 md:px-6">
+            <section className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 sm:py-6 md:py-8 lg:py-12 px-2 sm:px-4 md:px-6">
                 <div className="max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto text-center">
                     <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-1 sm:mb-2 md:mb-4 text-white">
                         <i className="bi bi-chat-heart mr-2 sm:mr-3"></i>
                         Mensajes
                     </h1>
-                    <p className="text-xs sm:text-sm md:text-base lg:text-lg text-green-100">Conecta y conversa con tus matches</p>
+                    <p className="text-xs sm:text-sm md:text-base lg:text-lg text-blue-100">Conecta y conversa con tus matches</p>
                 </div>
             </section>
 
@@ -18,40 +18,40 @@ const Mensajes: React.FC = () => {
             <section className="py-3 sm:py-4 md:py-6 px-2 sm:px-4 md:px-6">
                 <div className="max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
-                        {/* Card Conversaciones */}
-                        <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-green-100 hover:scale-105 group">
-                            <div className="bg-gradient-to-br from-green-100 to-emerald-200 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-green-200 group-hover:to-emerald-300 transition-all duration-300">
-                                <i className="bi bi-chat-dots text-green-600 text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300"></i>
+                        {/* Card Conversaciones - Blue/Cyan */}
+                        <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-200 hover:scale-105 group">
+                            <div className="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-blue-600 group-hover:to-cyan-700 transition-all duration-300 shadow-md">
+                                <i className="bi bi-chat-dots text-white text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
-                            <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-green-600 mb-1">12</div>
-                            <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">Conversaciones</div>
+                            <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-blue-600 mb-1">12</div>
+                            <div className="text-xs sm:text-sm md:text-base text-gray-700 font-semibold">Conversaciones</div>
                         </div>
                         
-                        {/* Card No leídos */}
-                        <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100 hover:scale-105 group">
-                            <div className="bg-gradient-to-br from-blue-100 to-indigo-200 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-blue-200 group-hover:to-indigo-300 transition-all duration-300">
-                                <i className="bi bi-envelope-exclamation text-blue-600 text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300"></i>
+                        {/* Card No leídos - Indigo */}
+                        <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-indigo-200 hover:scale-105 group">
+                            <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-indigo-600 group-hover:to-purple-700 transition-all duration-300 shadow-md">
+                                <i className="bi bi-envelope-exclamation text-white text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
-                            <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-blue-600 mb-1">3</div>
-                            <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">No leídos</div>
+                            <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-indigo-600 mb-1">3</div>
+                            <div className="text-xs sm:text-sm md:text-base text-gray-700 font-semibold">No leídos</div>
                         </div>
                         
-                        {/* Card Online */}
-                        <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 hover:scale-105 group">
-                            <div className="bg-gradient-to-br from-purple-100 to-violet-200 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-purple-200 group-hover:to-violet-300 transition-all duration-300">
-                                <i className="bi bi-circle-fill text-purple-600 text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300 animate-pulse"></i>
+                        {/* Card Online - Emerald/Teal */}
+                        <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-emerald-200 hover:scale-105 group">
+                            <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-emerald-600 group-hover:to-teal-700 transition-all duration-300 shadow-md">
+                                <i className="bi bi-circle-fill text-white text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300 animate-pulse"></i>
                             </div>
-                            <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-purple-600 mb-1">7</div>
-                            <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">Online</div>
+                            <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-emerald-600 mb-1">7</div>
+                            <div className="text-xs sm:text-sm md:text-base text-gray-700 font-semibold">Online</div>
                         </div>
                         
-                        {/* Card Mensajes hoy */}
-                        <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-100 hover:scale-105 group">
-                            <div className="bg-gradient-to-br from-orange-100 to-amber-200 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-orange-200 group-hover:to-amber-300 transition-all duration-300">
-                                <i className="bi bi-lightning-charge text-orange-600 text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300"></i>
+                        {/* Card Mensajes hoy - Amber/Orange */}
+                        <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-200 hover:scale-105 group">
+                            <div className="bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-amber-600 group-hover:to-orange-700 transition-all duration-300 shadow-md">
+                                <i className="bi bi-lightning-charge text-white text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
-                            <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-orange-600 mb-1">48</div>
-                            <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">Mensajes hoy</div>
+                            <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-amber-600 mb-1">48</div>
+                            <div className="text-xs sm:text-sm md:text-base text-gray-700 font-semibold">Mensajes hoy</div>
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@ const Mensajes: React.FC = () => {
             </section>
 
             {/* Acciones Rápidas completamente responsivas */}
-            <section className="py-4 sm:py-6 md:py-8 px-2 sm:px-4 md:px-6 bg-gradient-to-r from-emerald-50 to-green-50">
+            <section className="py-4 sm:py-6 md:py-8 px-2 sm:px-4 md:px-6 bg-gradient-to-r from-slate-50 to-gray-50">
                 <div className="max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto">
                     <div className="text-center mb-4 sm:mb-6">
                         <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-1 sm:mb-2">
@@ -137,44 +137,44 @@ const Mensajes: React.FC = () => {
                     </div>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-                        {/* Card Nuevo Chat */}
-                        <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-white border-opacity-50 hover:scale-105 group">
+                        {/* Card Nuevo Chat - Primary Teal/Cyan */}
+                        <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-teal-200 hover:border-teal-300 hover:scale-105 group">
                             <div className="text-center">
-                                <div className="bg-gradient-to-br from-green-100 to-emerald-200 rounded-xl sm:rounded-2xl w-12 sm:w-14 md:w-16 lg:w-20 h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 group-hover:from-green-200 group-hover:to-emerald-300 transition-all duration-300">
-                                    <i className="bi bi-plus-circle text-green-500 text-2xl sm:text-3xl md:text-4xl lg:text-5xl group-hover:scale-110 transition-transform duration-300"></i>
+                                <div className="bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl sm:rounded-2xl w-12 sm:w-14 md:w-16 lg:w-20 h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 group-hover:from-teal-600 group-hover:to-cyan-700 transition-all duration-300 shadow-lg">
+                                    <i className="bi bi-plus-circle text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl group-hover:scale-110 transition-transform duration-300"></i>
                                 </div>
-                                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 mb-1 sm:mb-2">Nuevo Chat</h3>
-                                <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">Inicia conversación con un match</p>
+                                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Nuevo Chat</h3>
+                                <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed font-medium">Inicia conversación con un match</p>
                             </div>
                         </div>
                         
-                        {/* Card Likes Recibidos */}
-                        <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-white border-opacity-50 hover:scale-105 group">
+                        {/* Card Likes Recibidos - Primary Indigo/Purple */}
+                        <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-indigo-200 hover:border-indigo-300 hover:scale-105 group">
                             <div className="text-center">
-                                <div className="bg-gradient-to-br from-pink-100 to-rose-200 rounded-xl sm:rounded-2xl w-12 sm:w-14 md:w-16 lg:w-20 h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 group-hover:from-pink-200 group-hover:to-rose-300 transition-all duration-300">
-                                    <i className="bi bi-heart text-pink-500 text-2xl sm:text-3xl md:text-4xl lg:text-5xl group-hover:scale-110 transition-transform duration-300 animate-pulse"></i>
+                                <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl sm:rounded-2xl w-12 sm:w-14 md:w-16 lg:w-20 h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 group-hover:from-indigo-600 group-hover:to-purple-700 transition-all duration-300 shadow-lg">
+                                    <i className="bi bi-heart text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl group-hover:scale-110 transition-transform duration-300 animate-pulse"></i>
                                 </div>
-                                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 mb-1 sm:mb-2">Likes Recibidos</h3>
-                                <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">Ve quién te ha dado like</p>
+                                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Likes Recibidos</h3>
+                                <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed font-medium">Ve quién te ha dado like</p>
                             </div>
                         </div>
                         
-                        {/* Card Descubrir */}
-                        <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-white border-opacity-50 hover:scale-105 group sm:col-span-2 lg:col-span-1">
+                        {/* Card Descubrir - Primary Blue/Cyan */}
+                        <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-blue-200 hover:border-blue-300 hover:scale-105 group sm:col-span-2 lg:col-span-1">
                             <div className="text-center">
-                                <div className="bg-gradient-to-br from-blue-100 to-indigo-200 rounded-xl sm:rounded-2xl w-12 sm:w-14 md:w-16 lg:w-20 h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 group-hover:from-blue-200 group-hover:to-indigo-300 transition-all duration-300">
-                                    <i className="bi bi-search text-blue-500 text-2xl sm:text-3xl md:text-4xl lg:text-5xl group-hover:scale-110 transition-transform duration-300"></i>
+                                <div className="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl sm:rounded-2xl w-12 sm:w-14 md:w-16 lg:w-20 h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-cyan-700 transition-all duration-300 shadow-lg">
+                                    <i className="bi bi-search text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl group-hover:scale-110 transition-transform duration-300"></i>
                                 </div>
-                                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-800 mb-1 sm:mb-2">Descubrir</h3>
-                                <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">Encuentra nuevas personas</p>
+                                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Descubrir</h3>
+                                <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed font-medium">Encuentra nuevas personas</p>
                             </div>
                         </div>
                     </div>
                     
-                    {/* Botón adicional para crear grupo o acción especial */}
+                    {/* Botón adicional para crear grupo o acción especial - Primary Gradient */}
                     <div className="mt-6 sm:mt-8 text-center">
-                        <button className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                            <i className="bi bi-people-fill mr-2"></i>
+                        <button className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 hover:from-blue-600 hover:via-indigo-600 hover:to-purple-600 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base md:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-white border-opacity-20">
+                            <i className="bi bi-people-fill mr-2 sm:mr-3"></i>
                             Ver Todos los Matches
                         </button>
                     </div>

@@ -16,31 +16,30 @@ const Fotos: React.FC = () => {
     const emptySlots = 9 - photos.length;
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-fuchsia-50 relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 relative overflow-hidden">
             {/* Elementos decorativos de fondo */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-violet-300 to-fuchsia-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-fuchsia-300 to-violet-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse animation-delay-2000"></div>
+                <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-300 to-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-cyan-300 to-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse animation-delay-2000"></div>
             </div>
 
             {/* Encabezado */}
-            <section className="relative bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-600 text-white py-8 px-6 shadow-xl">
-                <div className="absolute inset-0 bg-white bg-opacity-10 backdrop-blur-sm"></div>
+            <section className="relative bg-blue-600 text-white py-8 px-6 shadow-xl">
                 <div className="relative max-w-6xl mx-auto flex items-center justify-between">
                     <div>
-                        <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-violet-100 bg-clip-text text-transparent">
+                        <h1 className="text-3xl md:text-4xl font-bold text-white">
                             Mis Fotos 📸
                         </h1>
-                        <p className="text-violet-100 mt-1 font-medium">Gestiona tu galería personal</p>
+                        <p className="text-blue-100 mt-1 font-medium">Gestiona tu galería personal</p>
                     </div>
                     <div className="flex space-x-3">
                         <button 
                             onClick={() => setUploadMode(!uploadMode)}
-                            className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm border border-white border-opacity-30 transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105"
+                            className="bg-white text-blue-600 hover:bg-blue-50 transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105"
                         >
                             <i className="bi bi-plus-lg text-lg"></i>
                         </button>
-                        <button className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm border border-white border-opacity-30 transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <button className="bg-white text-blue-600 hover:bg-blue-50 transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105">
                             <i className="bi bi-gear text-lg"></i>
                         </button>
                     </div>
@@ -51,42 +50,42 @@ const Fotos: React.FC = () => {
             <section className="relative py-8 px-6">
                 <div className="max-w-4xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                        <div className="bg-white bg-opacity-80 backdrop-blur-xl rounded-2xl p-4 text-center shadow-lg border border-white border-opacity-50">
-                            <div className="bg-gradient-to-br from-violet-100 to-fuchsia-200 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
-                                <i className="bi bi-images text-violet-600 text-xl"></i>
+                        <div className="bg-white rounded-2xl p-4 text-center shadow-lg border border-gray-200">
+                            <div className="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                                <i className="bi bi-images text-white text-xl"></i>
                             </div>
-                            <div className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">{photos.length}</div>
-                            <div className="text-xs text-gray-600 font-medium">Fotos subidas</div>
+                            <div className="text-2xl font-bold text-blue-600">{photos.length}</div>
+                            <div className="text-xs text-gray-700 font-semibold">Fotos subidas</div>
                         </div>
                         
-                        <div className="bg-white bg-opacity-80 backdrop-blur-xl rounded-2xl p-4 text-center shadow-lg border border-white border-opacity-50">
-                            <div className="bg-gradient-to-br from-pink-100 to-rose-200 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
-                                <i className="bi bi-heart-fill text-pink-500 text-xl"></i>
+                        <div className="bg-white rounded-2xl p-4 text-center shadow-lg border border-gray-200">
+                            <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                                <i className="bi bi-heart-fill text-white text-xl"></i>
                             </div>
-                            <div className="text-2xl font-bold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
+                            <div className="text-2xl font-bold text-emerald-600">
                                 {photos.reduce((sum, photo) => sum + photo.likes, 0)}
                             </div>
-                            <div className="text-xs text-gray-600 font-medium">Total likes</div>
+                            <div className="text-xs text-gray-700 font-semibold">Total likes</div>
                         </div>
                         
-                        <div className="bg-white bg-opacity-80 backdrop-blur-xl rounded-2xl p-4 text-center shadow-lg border border-white border-opacity-50">
-                            <div className="bg-gradient-to-br from-blue-100 to-indigo-200 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
-                                <i className="bi bi-eye-fill text-blue-500 text-xl"></i>
+                        <div className="bg-white rounded-2xl p-4 text-center shadow-lg border border-gray-200">
+                            <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                                <i className="bi bi-eye-fill text-white text-xl"></i>
                             </div>
-                            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                            <div className="text-2xl font-bold text-indigo-600">
                                 {photos.reduce((sum, photo) => sum + photo.views, 0)}
                             </div>
-                            <div className="text-xs text-gray-600 font-medium">Total vistas</div>
+                            <div className="text-xs text-gray-700 font-semibold">Total vistas</div>
                         </div>
                         
-                        <div className="bg-white bg-opacity-80 backdrop-blur-xl rounded-2xl p-4 text-center shadow-lg border border-white border-opacity-50">
-                            <div className="bg-gradient-to-br from-green-100 to-emerald-200 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
-                                <i className="bi bi-star-fill text-green-500 text-xl"></i>
+                        <div className="bg-white rounded-2xl p-4 text-center shadow-lg border border-gray-200">
+                            <div className="bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                                <i className="bi bi-star-fill text-white text-xl"></i>
                             </div>
-                            <div className="text-2xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                            <div className="text-2xl font-bold text-amber-600">
                                 {Math.round((photos.reduce((sum, photo) => sum + photo.likes, 0) / photos.reduce((sum, photo) => sum + photo.views, 0)) * 100)}%
                             </div>
-                            <div className="text-xs text-gray-600 font-medium">Engagement</div>
+                            <div className="text-xs text-gray-700 font-semibold">Engagement</div>
                         </div>
                     </div>
                 </div>
@@ -95,7 +94,7 @@ const Fotos: React.FC = () => {
             {/* Galería de Fotos */}
             <section className="relative py-8 px-6">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent mb-8 text-center">
+                    <h2 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent mb-8 text-center">
                         Tu Galería Personal
                     </h2>
                     
@@ -103,27 +102,27 @@ const Fotos: React.FC = () => {
                         {photos.map((photo) => (
                             <div 
                                 key={photo.id} 
-                                className="group relative aspect-square bg-gradient-to-br from-violet-200 to-fuchsia-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                                className="group relative aspect-square bg-gradient-to-br from-blue-200 to-indigo-300 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
                                 onClick={() => setSelectedPhoto(photo.id)}
                             >
                                 {/* Contenido de la foto */}
-                                <div className="relative h-full flex items-center justify-center bg-gradient-to-br from-violet-300 to-fuchsia-400 opacity-70">
+                                <div className="relative h-full flex items-center justify-center bg-gradient-to-br from-blue-300 to-indigo-400">
                                     <i className="bi bi-image text-white text-4xl"></i>
                                 </div>
                                 
                                 {/* Badge de foto principal */}
                                 {photo.isMain && (
-                                    <div className="absolute top-3 left-3 bg-yellow-500 bg-opacity-90 backdrop-blur-sm text-white px-2 py-1 rounded-full text-xs font-semibold shadow-lg">
+                                    <div className="absolute top-3 left-3 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-semibold shadow-lg">
                                         <i className="bi bi-star-fill mr-1"></i>Principal
                                     </div>
                                 )}
                                 
                                 {/* Overlay con estadísticas */}
-                                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
                                     <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
                                         <div className="flex items-center justify-center space-x-4 mb-2">
                                             <span className="flex items-center">
-                                                <i className="bi bi-heart-fill text-pink-400 mr-1"></i>
+                                                <i className="bi bi-heart-fill text-red-400 mr-1"></i>
                                                 {photo.likes}
                                             </span>
                                             <span className="flex items-center">
@@ -132,10 +131,10 @@ const Fotos: React.FC = () => {
                                             </span>
                                         </div>
                                         <div className="flex justify-center space-x-2">
-                                            <button className="bg-white bg-opacity-20 backdrop-blur-sm rounded-full p-2 hover:bg-opacity-40 transition-all">
+                                            <button className="bg-white bg-opacity-90 text-gray-700 rounded-full p-2 hover:bg-white transition-all">
                                                 <i className="bi bi-pencil text-sm"></i>
                                             </button>
-                                            <button className="bg-white bg-opacity-20 backdrop-blur-sm rounded-full p-2 hover:bg-opacity-40 transition-all">
+                                            <button className="bg-red-500 text-white rounded-full p-2 hover:bg-red-600 transition-all">
                                                 <i className="bi bi-trash text-sm"></i>
                                             </button>
                                         </div>
@@ -143,7 +142,7 @@ const Fotos: React.FC = () => {
                                 </div>
                                 
                                 {/* Botón de menú */}
-                                <button className="absolute top-3 right-3 bg-black bg-opacity-50 backdrop-blur-sm text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-opacity-70">
+                                <button className="absolute top-3 right-3 bg-gray-800 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-gray-900">
                                     <i className="bi bi-three-dots text-sm"></i>
                                 </button>
                             </div>
@@ -153,11 +152,11 @@ const Fotos: React.FC = () => {
                         {Array.from({ length: emptySlots }).map((_, index) => (
                             <div 
                                 key={`empty-${index}`}
-                                className="group aspect-square border-2 border-dashed border-violet-300 rounded-2xl flex flex-col items-center justify-center hover:border-violet-400 hover:bg-violet-50 transition-all duration-300 cursor-pointer"
+                                className="group aspect-square border-2 border-dashed border-blue-300 rounded-2xl flex flex-col items-center justify-center hover:border-blue-500 hover:bg-blue-50 transition-all duration-300 cursor-pointer"
                                 onClick={() => setUploadMode(true)}
                             >
-                                <i className="bi bi-plus-circle text-4xl text-violet-400 group-hover:text-violet-500 mb-2"></i>
-                                <p className="text-violet-600 font-medium text-sm">Agregar foto</p>
+                                <i className="bi bi-plus-circle text-4xl text-blue-500 group-hover:text-blue-600 mb-2"></i>
+                                <p className="text-blue-600 font-medium text-sm">Agregar foto</p>
                                 <p className="text-violet-400 text-xs">Máximo 9 fotos</p>
                             </div>
                         ))}
