@@ -166,69 +166,6 @@ const Previa: React.FC = () => {
                 </div>
             </section>
 
-            {/* Consejos para Mejorar el Perfil */}
-            <section className="relative py-12 px-6">
-                <div className="max-w-4xl mx-auto">
-                    <div className="bg-white bg-opacity-90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white border-opacity-20">
-                        <h3 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6 text-center">
-                            💡 Consejos para Mejorar tu Perfil
-                        </h3>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                            <div className="flex items-start space-x-4">
-                                <div className="bg-green-100 text-green-600 rounded-full p-2 flex-shrink-0">
-                                    <i className="bi bi-check-lg text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold text-gray-800 mb-1">Fotos de Calidad</h4>
-                                    <p className="text-gray-600 text-sm">Tienes buenas fotos que muestran tu personalidad</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start space-x-4">
-                                <div className="bg-yellow-100 text-yellow-600 rounded-full p-2 flex-shrink-0">
-                                    <i className="bi bi-exclamation-triangle text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold text-gray-800 mb-1">Más Detalles</h4>
-                                    <p className="text-gray-600 text-sm">Agrega más información sobre tus hobbies</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start space-x-4">
-                                <div className="bg-blue-100 text-blue-600 rounded-full p-2 flex-shrink-0">
-                                    <i className="bi bi-info-circle text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold text-gray-800 mb-1">Bio Atractiva</h4>
-                                    <p className="text-gray-600 text-sm">Tu descripción es interesante y genuina</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start space-x-4">
-                                <div className="bg-red-100 text-red-600 rounded-full p-2 flex-shrink-0">
-                                    <i className="bi bi-x-lg text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold text-gray-800 mb-1">Verificación</h4>
-                                    <p className="text-gray-600 text-sm">Considera verificar tu cuenta para más confianza</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="flex justify-center space-x-6">
-                            <button className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                                <i className="bi bi-pencil mr-2"></i>
-                                Editar Perfil
-                            </button>
-                            <button className="bg-white bg-opacity-80 backdrop-blur-sm border-2 border-indigo-300 text-indigo-600 hover:text-indigo-700 px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                                <i className="bi bi-camera mr-2"></i>
-                                Cambiar Fotos
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };

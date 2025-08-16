@@ -56,25 +56,6 @@ const Matches: React.FC = () => {
                 </div>
             </section>
 
-            {/* Consejos para Matches */}
-            <section className="py-6 sm:py-8 px-4 sm:px-6 bg-gradient-to-r from-indigo-50 to-blue-50">
-                <div className="max-w-3xl mx-auto text-center">
-                    <h2 className="text-lg sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">💡 Consejos para tus Matches</h2>
-                    <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-white border-opacity-50">
-                        <p className="text-gray-700 text-sm sm:text-base mb-4 leading-relaxed">
-                            "Sé auténtico y muestra interés genuino en tus conversaciones. La honestidad y la empatía son clave para construir relaciones significativas."
-                        </p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4">
-                            <button className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold hover:from-indigo-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm sm:text-base">
-                                Más consejos
-                            </button>
-                            <button className="border-2 border-indigo-500 text-indigo-600 px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold hover:bg-indigo-50 transition-all duration-300 text-sm sm:text-base">
-                                Compartir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };

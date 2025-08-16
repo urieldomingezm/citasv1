@@ -128,62 +128,6 @@ const Mensajes: React.FC = () => {
                     </div>
                 </div>
             </section>
-
-            {/* Acciones Rápidas completamente responsivas */}
-            <section className="py-4 sm:py-6 md:py-8 px-2 sm:px-4 md:px-6 bg-gradient-to-r from-slate-50 to-gray-50">
-                <div className="max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto">
-                    <div className="text-center mb-4 sm:mb-6">
-                        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-1 sm:mb-2">
-                            <i className="bi bi-lightning-charge mr-2"></i>
-                            Acciones Rápidas
-                        </h2>
-                        <p className="text-xs sm:text-sm md:text-base text-gray-600">Herramientas para conectar mejor</p>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-                        {/* Card Nuevo Chat - Primary Teal/Cyan */}
-                        <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-teal-200 hover:border-teal-300 hover:scale-105 group">
-                            <div className="text-center">
-                                <div className="bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl sm:rounded-2xl w-12 sm:w-14 md:w-16 lg:w-20 h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 group-hover:from-teal-600 group-hover:to-cyan-700 transition-all duration-300 shadow-lg">
-                                    <i className="bi bi-plus-circle text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl group-hover:scale-110 transition-transform duration-300"></i>
-                                </div>
-                                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Nuevo Chat</h3>
-                                <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed font-medium">Inicia conversación con un match</p>
-                            </div>
-                        </div>
-                        
-                        {/* Card Likes Recibidos - Primary Indigo/Purple */}
-                        <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-indigo-200 hover:border-indigo-300 hover:scale-105 group">
-                            <div className="text-center">
-                                <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl sm:rounded-2xl w-12 sm:w-14 md:w-16 lg:w-20 h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 group-hover:from-indigo-600 group-hover:to-purple-700 transition-all duration-300 shadow-lg">
-                                    <i className="bi bi-heart text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl group-hover:scale-110 transition-transform duration-300 animate-pulse"></i>
-                                </div>
-                                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Likes Recibidos</h3>
-                                <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed font-medium">Ve quién te ha dado like</p>
-                            </div>
-                        </div>
-                        
-                        {/* Card Descubrir - Primary Blue/Cyan */}
-                        <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-blue-200 hover:border-blue-300 hover:scale-105 group sm:col-span-2 lg:col-span-1">
-                            <div className="text-center">
-                                <div className="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl sm:rounded-2xl w-12 sm:w-14 md:w-16 lg:w-20 h-12 sm:h-14 md:h-16 lg:h-20 flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-cyan-700 transition-all duration-300 shadow-lg">
-                                    <i className="bi bi-search text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl group-hover:scale-110 transition-transform duration-300"></i>
-                                </div>
-                                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-gray-800 mb-1 sm:mb-2">Descubrir</h3>
-                                <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed font-medium">Encuentra nuevas personas</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    {/* Botón adicional para crear grupo o acción especial - Primary Gradient */}
-                    <div className="mt-6 sm:mt-8 text-center">
-                        <button className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 hover:from-blue-600 hover:via-indigo-600 hover:to-purple-600 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base md:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border-2 border-white border-opacity-20">
-                            <i className="bi bi-people-fill mr-2 sm:mr-3"></i>
-                            Ver Todos los Matches
-                        </button>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };

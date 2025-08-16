@@ -245,8 +245,8 @@ const Fotos: React.FC = () => {
             <section className="relative py-12 px-6">
                 <div className="max-w-4xl mx-auto">
                     <div className="bg-white bg-opacity-90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white border-opacity-20">
-                        <h3 className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent mb-6 text-center">
-                            📷 Tips para Fotos Perfectas
+                        <h3 className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text mb-6 text-center">
+                            Tips para Fotos Perfectas
                         </h3>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
