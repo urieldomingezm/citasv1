@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Previa: React.FC = () => {
     const [currentPhoto, setCurrentPhoto] = useState(0);
-    
+
     const photos = [1, 2, 3, 4, 5, 6];
 
     const nextPhoto = () => {
@@ -14,33 +14,34 @@ const Previa: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
             {/* Elementos decorativos de fondo */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-300 to-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-purple-300 to-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse animation-delay-2000"></div>
+                <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500 rounded-full"></div>
+                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full"></div>
             </div>
 
+
             {/* Encabezado */}
-            <section className="relative bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white py-8 px-6 shadow-xl">
-                <div className="absolute inset-0 bg-white bg-opacity-10 backdrop-blur-sm"></div>
+            <section className="relative bg-blue-600 text-white py-8 px-6 shadow-xl">
                 <div className="relative max-w-6xl mx-auto flex items-center justify-between">
                     <div>
-                        <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-indigo-100 bg-clip-text text-transparent">
-                            Vista Previa 👁️
+                        <h1 className="text-3xl md:text-4xl font-bold text-white">
+                            Vista Previa
                         </h1>
-                        <p className="text-indigo-100 mt-1 font-medium">Así te ven otros usuarios</p>
+                        <p className="text-white mt-1 font-medium">Así te ven otros usuarios</p>
                     </div>
                     <div className="flex space-x-3">
-                        <button className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm border border-white border-opacity-30 transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <button className="bg-white text-blue-600 hover:bg-gray-100 transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105">
                             <i className="bi bi-pencil text-lg"></i>
                         </button>
-                        <button className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm border border-white border-opacity-30 transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <button className="bg-white text-blue-600 hover:bg-gray-100 transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105">
                             <i className="bi bi-share text-lg"></i>
                         </button>
                     </div>
                 </div>
             </section>
+
 
             {/* Contenido Principal */}
             <section className="relative py-12 px-6">
@@ -48,25 +49,25 @@ const Previa: React.FC = () => {
                     {/* Tarjeta de Perfil como la verían otros */}
                     <div className="relative bg-white bg-opacity-95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden mb-8 border border-white border-opacity-20" style={{ height: '700px' }}>
                         {/* Carrusel de Fotos */}
-                        <div className="relative h-2/3 bg-gradient-to-br from-indigo-200 via-purple-200 to-indigo-300 overflow-hidden">
+                        <div className="relative h-2/3 bg-gradient-to-br from-blue-200 via-indigo-200 to-slate-300 overflow-hidden">
                             {/* Efectos de fondo */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-indigo-300 to-purple-400 opacity-70"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-300 to-indigo-400 opacity-70"></div>
                             <div className="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-30 rounded-full blur-xl animate-pulse"></div>
-                            <div className="absolute bottom-10 right-10 w-32 h-32 bg-purple-300 bg-opacity-40 rounded-full blur-2xl animate-pulse animation-delay-1000"></div>
-                            
+                            <div className="absolute bottom-10 right-10 w-32 h-32 bg-slate-300 bg-opacity-40 rounded-full blur-2xl animate-pulse animation-delay-1000"></div>
+
                             {/* Foto Principal */}
                             <div className="relative flex items-center justify-center h-full">
                                 <i className="bi bi-person text-white text-9xl drop-shadow-lg"></i>
                             </div>
 
                             {/* Controles de navegación de fotos */}
-                            <button 
+                            <button
                                 onClick={prevPhoto}
                                 className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 transition-all duration-300"
                             >
                                 <i className="bi bi-chevron-left text-xl"></i>
                             </button>
-                            <button 
+                            <button
                                 onClick={nextPhoto}
                                 className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 transition-all duration-300"
                             >
@@ -78,11 +79,10 @@ const Previa: React.FC = () => {
                                 {photos.map((_, index) => (
                                     <div
                                         key={index}
-                                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                            index === currentPhoto 
-                                                ? 'bg-white w-6' 
-                                                : 'bg-white bg-opacity-50'
-                                        }`}
+                                        className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentPhoto
+                                            ? 'bg-white w-6'
+                                            : 'bg-white bg-opacity-50'
+                                            }`}
                                     ></div>
                                 ))}
                             </div>
@@ -99,7 +99,7 @@ const Previa: React.FC = () => {
                                 Activo ahora
                             </div>
                         </div>
-                        
+
                         {/* Información del Perfil */}
                         <div className="h-1/3 p-6 bg-gradient-to-b from-white to-gray-50">
                             <div className="flex items-start justify-between mb-4">
@@ -108,22 +108,22 @@ const Previa: React.FC = () => {
                                         Tu Nombre, 25
                                     </h2>
                                     <p className="text-gray-600 flex items-center font-medium mb-2">
-                                        <i className="bi bi-geo-alt text-indigo-500 mr-2"></i>
+                                        <i className="bi bi-geo-alt text-blue-500 mr-2"></i>
                                         Tu Ciudad, País
                                     </p>
                                     <div className="flex items-center space-x-4 text-sm text-gray-500">
                                         <span className="flex items-center">
-                                            <i className="bi bi-eye text-indigo-400 mr-1"></i>
+                                            <i className="bi bi-eye text-blue-400 mr-1"></i>
                                             127 vistas
                                         </span>
                                         <span className="flex items-center">
-                                            <i className="bi bi-heart text-pink-400 mr-1"></i>
+                                            <i className="bi bi-heart text-emerald-400 mr-1"></i>
                                             23 likes
                                         </span>
                                     </div>
                                 </div>
                                 <div className="flex flex-col space-y-2">
-                                    <div className="bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-600 rounded-full p-2 text-center">
+                                    <div className="bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-600 rounded-full p-2 text-center">
                                         <i className="bi bi-heart text-lg"></i>
                                     </div>
                                     <div className="bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-600 rounded-full p-2 text-center">
@@ -131,16 +131,16 @@ const Previa: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <p className="text-gray-700 text-sm mb-4 leading-relaxed">
                                 "Amo viajar y conocer nuevas culturas. Buscando a alguien con quien compartir aventuras increíbles y crear recuerdos únicos."
                             </p>
-                            
+
                             <div className="flex flex-wrap gap-2">
                                 {['Viajes', 'Fotografía', 'Música', 'Arte'].map((interest, index) => (
-                                    <span 
-                                        key={index} 
-                                        className="bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium border border-indigo-200"
+                                    <span
+                                        key={index}
+                                        className="bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium border border-blue-200"
                                     >
                                         {interest}
                                     </span>
@@ -154,12 +154,12 @@ const Previa: React.FC = () => {
                         <button className="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-600 rounded-full p-5 shadow-xl border border-gray-300 cursor-not-allowed opacity-70">
                             <i className="bi bi-x-lg text-3xl"></i>
                         </button>
-                        
+
                         <button className="bg-gradient-to-br from-blue-400 to-indigo-500 text-white rounded-full p-5 shadow-xl cursor-not-allowed opacity-70">
                             <i className="bi bi-star-fill text-3xl"></i>
                         </button>
-                        
-                        <button className="bg-gradient-to-br from-pink-400 to-rose-500 text-white rounded-full p-5 shadow-xl cursor-not-allowed opacity-70">
+
+                        <button className="bg-gradient-to-br from-emerald-400 to-teal-500 text-white rounded-full p-5 shadow-xl cursor-not-allowed opacity-70">
                             <i className="bi bi-heart-fill text-3xl"></i>
                         </button>
                     </div>
@@ -173,7 +173,7 @@ const Previa: React.FC = () => {
                         <h3 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6 text-center">
                             💡 Consejos para Mejorar tu Perfil
                         </h3>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                             <div className="flex items-start space-x-4">
                                 <div className="bg-green-100 text-green-600 rounded-full p-2 flex-shrink-0">
@@ -184,7 +184,7 @@ const Previa: React.FC = () => {
                                     <p className="text-gray-600 text-sm">Tienes buenas fotos que muestran tu personalidad</p>
                                 </div>
                             </div>
-                            
+
                             <div className="flex items-start space-x-4">
                                 <div className="bg-yellow-100 text-yellow-600 rounded-full p-2 flex-shrink-0">
                                     <i className="bi bi-exclamation-triangle text-lg"></i>
@@ -194,7 +194,7 @@ const Previa: React.FC = () => {
                                     <p className="text-gray-600 text-sm">Agrega más información sobre tus hobbies</p>
                                 </div>
                             </div>
-                            
+
                             <div className="flex items-start space-x-4">
                                 <div className="bg-blue-100 text-blue-600 rounded-full p-2 flex-shrink-0">
                                     <i className="bi bi-info-circle text-lg"></i>
@@ -204,7 +204,7 @@ const Previa: React.FC = () => {
                                     <p className="text-gray-600 text-sm">Tu descripción es interesante y genuina</p>
                                 </div>
                             </div>
-                            
+
                             <div className="flex items-start space-x-4">
                                 <div className="bg-red-100 text-red-600 rounded-full p-2 flex-shrink-0">
                                     <i className="bi bi-x-lg text-lg"></i>
