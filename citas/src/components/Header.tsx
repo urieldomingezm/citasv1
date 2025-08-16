@@ -46,30 +46,30 @@ const HeaderNavbar: React.FC = () => {
     };
 
     return (
-        <header className="bg-gray-100 text-gray-900 py-2 px-4 shadow flex items-center justify-between relative">
+        <header className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-200 py-2 px-4 shadow flex items-center justify-between relative transition-colors duration-300">
             <h1 className="text-xl font-bold">MorrysMatch</h1>
             <button
-                className="p-2 z-20"
+                className="p-2 z-20 text-gray-900 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
                 onClick={() => setOpen(true)}
                 aria-label="Abrir menú"
             >
                 <i className="bi bi-list" style={{ fontSize: '24px' }}></i>
             </button>
             {/* Offcanvas */}
-            <nav className={`fixed top-0 right-0 h-full w-64 ${themeClasses.background} bg-white dark:bg-gray-800 ${themeClasses.text} text-gray-800 dark:text-gray-200 shadow-lg transform ${open ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-200 ease-in-out z-30`}>
-                <div className={`flex items-center justify-between p-4 ${themeClasses.border} border-b border-gray-200 dark:border-gray-600`}>
+            <nav className={`fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-lg transform ${open ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-200 ease-in-out z-30`}>
+                <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-600">
                     <div className="flex flex-col">
-                        <span className={`font-bold text-lg ${themeClasses.text}`}>
+                        <span className="font-bold text-lg">
                             {isAuthenticated ? 'Mi Cuenta' : 'Menú'}
                         </span>
                         {isAuthenticated && user && (
-                            <span className={`text-sm ${themeClasses.textSecondary} text-gray-500 dark:text-gray-400`}>
+                            <span className="text-sm text-gray-500 dark:text-gray-400">
                                 Hola, {user.username}
                             </span>
                         )}
                     </div>
                     <button
-                        className={`p-2 ${themeClasses.text} ${themeClasses.hover} hover:bg-gray-100 dark:hover:bg-gray-700 rounded`}
+                        className="p-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors"
                         onClick={() => setOpen(false)}
                         aria-label="Cerrar menú"
                     >
