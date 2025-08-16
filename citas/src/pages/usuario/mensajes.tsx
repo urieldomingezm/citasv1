@@ -1,8 +1,9 @@
 import React from 'react';
+import { themeClasses } from '../../themes';
 
 const Mensajes: React.FC = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50">
+        <div className={`min-h-screen ${themeClasses.backgroundSecondary} transition-colors duration-300`}>
             {/* Encabezado completamente responsivo */}
             <section className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 sm:py-6 md:py-8 lg:py-12 px-2 sm:px-4 md:px-6">
                 <div className="max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto text-center">
@@ -18,34 +19,34 @@ const Mensajes: React.FC = () => {
                 <div className="max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
                         {/* Card Conversaciones - Blue/Cyan */}
-                        <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-200 hover:scale-105 group">
+                        <div className={`${themeClasses.card} bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border-blue-200 dark:border-blue-700 hover:scale-105 group`}>
                             <div className="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-blue-600 group-hover:to-cyan-700 transition-all duration-300 shadow-md">
                                 <i className="bi bi-chat-dots text-white text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                             <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-blue-600 mb-1">12</div>
-                            <div className="text-xs sm:text-sm md:text-base text-gray-700 font-semibold">Conversaciones</div>
+                            <div className={`text-xs sm:text-sm md:text-base ${themeClasses.text} font-semibold`}>Conversaciones</div>
                         </div>
                         
                         {/* Card No leídos - Indigo */}
-                        <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-indigo-200 hover:scale-105 group">
+                        <div className={`${themeClasses.card} bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border-indigo-200 dark:border-indigo-700 hover:scale-105 group`}>
                             <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-indigo-600 group-hover:to-purple-700 transition-all duration-300 shadow-md">
                                 <i className="bi bi-envelope-exclamation text-white text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                             <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-indigo-600 mb-1">3</div>
-                            <div className="text-xs sm:text-sm md:text-base text-gray-700 font-semibold">No leídos</div>
+                            <div className={`text-xs sm:text-sm md:text-base ${themeClasses.text} font-semibold`}>No leídos</div>
                         </div>
                         
                         {/* Card Online - Emerald/Teal */}
-                        <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-emerald-200 hover:scale-105 group">
+                        <div className={`${themeClasses.card} bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border-emerald-200 dark:border-emerald-700 hover:scale-105 group`}>
                             <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-emerald-600 group-hover:to-teal-700 transition-all duration-300 shadow-md">
                                 <i className="bi bi-circle-fill text-white text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300 animate-pulse"></i>
                             </div>
                             <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-emerald-600 mb-1">7</div>
-                            <div className="text-xs sm:text-sm md:text-base text-gray-700 font-semibold">Online</div>
+                            <div className={`text-xs sm:text-sm md:text-base ${themeClasses.text} font-semibold`}>Online</div>
                         </div>
                         
                         {/* Card Mensajes hoy - Amber/Orange */}
-                        <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-200 hover:scale-105 group">
+                        <div className={`${themeClasses.card} bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border-amber-200 dark:border-amber-700 hover:scale-105 group`}>
                             <div className="bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-amber-600 group-hover:to-orange-700 transition-all duration-300 shadow-md">
                                 <i className="bi bi-lightning-charge text-white text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300"></i>
                             </div>

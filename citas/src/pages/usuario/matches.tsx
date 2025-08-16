@@ -1,61 +1,50 @@
 import React from 'react';
+import { themeClasses } from '../../themes';
 
 const Matches: React.FC = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-            {/* Encabezado */}
-            <section className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-8 sm:py-12 px-4 sm:px-6">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 text-white">Tus Matches</h1>
-                    <p className="text-sm sm:text-lg text-blue-100">Conecta con personas que comparten tus intereses</p>
+        <div className={`min-h-screen ${themeClasses.backgroundSecondary} transition-colors duration-300`}>
+            {/* Header */}
+            <section className="bg-gradient-to-r from-pink-500 to-red-600 text-white py-8 px-6 shadow-xl">
+                <div className="max-w-6xl mx-auto text-center">
+                    <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                        Tus Matches
+                    </h1>
+                    <p className="text-pink-100 text-lg">
+                        Personas que también se interesaron en ti
+                    </p>
                 </div>
             </section>
 
-            {/* Estadísticas */}
-            <section className="py-4 sm:py-6 px-4 sm:px-6">
-                <div className="max-w-4xl mx-auto">
-                    <div className="grid grid-cols-3 gap-2 sm:gap-4">
-                        <div className="bg-white bg-opacity-70 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center shadow-lg border border-blue-100">
-                            <div className="text-lg sm:text-2xl font-bold text-blue-600 mb-1">24</div>
-                            <div className="text-xs sm:text-sm text-gray-600">Matches</div>
-                        </div>
-                        <div className="bg-white bg-opacity-70 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center shadow-lg border border-green-100">
-                            <div className="text-lg sm:text-2xl font-bold text-green-600 mb-1">12</div>
-                            <div className="text-xs sm:text-sm text-gray-600">Conversaciones</div>
-                        </div>
-                        <div className="bg-white bg-opacity-70 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center shadow-lg border border-purple-100">
-                            <div className="text-lg sm:text-2xl font-bold text-purple-600 mb-1">5</div>
-                            <div className="text-xs sm:text-sm text-gray-600">Nuevos hoy</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Lista de Matches */}
-            <section className="py-4 sm:py-8 px-4 sm:px-6">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">Explora tus Matches</h2>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
-                            <div key={i} className="bg-white bg-opacity-90 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg text-center cursor-pointer hover:shadow-xl transition-all duration-300 hover:scale-105 border border-white border-opacity-50">
-                                <div className="relative">
-                                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-300 to-indigo-300 rounded-full mx-auto mb-2 sm:mb-3 flex items-center justify-center">
-                                        <i className="bi bi-person text-white text-lg sm:text-2xl"></i>
-                                    </div>
-                                    {/* Indicador online */}
-                                    <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded-full border-2 border-white"></div>
+            {/* Contenido */}
+            <section className="py-8 px-6">
+                <div className="max-w-6xl mx-auto">
+                    <h2 className={`text-2xl font-bold ${themeClasses.text} mb-6 text-center`}>
+                        Nuevos Matches
+                    </h2>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[1, 2, 3, 4, 5, 6].map((match) => (
+                            <div key={match} className={`${themeClasses.card} rounded-xl overflow-hidden shadow-lg hover:shadow-xl ${themeClasses.hover} transition-all duration-300`}>
+                                <div className="h-64 bg-gradient-to-br from-pink-300 to-red-400 flex items-center justify-center">
+                                    <i className="bi bi-person text-white text-6xl"></i>
                                 </div>
-                                <h4 className="font-semibold text-gray-800 text-xs sm:text-sm mb-1">Usuario {i}</h4>
-                                <p className="text-xs text-gray-500">2 km</p>
-                                <div className="mt-2 flex justify-center">
-                                    <div className="w-8 h-1 sm:w-10 sm:h-1 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full"></div>
+                                <div className="p-4">
+                                    <h3 className={`font-semibold ${themeClasses.text} text-lg mb-2`}>
+                                        Match {match}
+                                    </h3>
+                                    <p className={`${themeClasses.textSecondary} text-sm mb-3`}>
+                                        Tienen gustos similares
+                                    </p>
+                                    <button className="w-full bg-gradient-to-r from-pink-500 to-red-600 text-white py-2 rounded-lg hover:from-pink-600 hover:to-red-700 transition-all duration-300">
+                                        Enviar mensaje
+                                    </button>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
-
         </div>
     );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { themeClasses } from '../../themes';
 
 const Descubrir: React.FC = () => {
     const [showFilters, setShowFilters] = useState(false);
@@ -53,7 +54,7 @@ const Descubrir: React.FC = () => {
     const profile = profiles[currentProfile];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 p-2 sm:p-4 lg:p-6">
+        <div className={`min-h-screen ${themeClasses.backgroundSecondary} transition-colors duration-300 p-2 sm:p-4 lg:p-6`}>
             <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
@@ -62,19 +63,19 @@ const Descubrir: React.FC = () => {
                     </h1>
                     <button 
                         onClick={() => setShowFilters(!showFilters)}
-                        className="bg-white bg-opacity-80 backdrop-blur-sm border border-indigo-200 hover:bg-opacity-90 transition-all duration-300 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl"
+                        className={`${themeClasses.card} bg-opacity-80 backdrop-blur-sm border ${themeClasses.border} ${themeClasses.hover} transition-all duration-300 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl`}
                     >
-                        <i className="bi bi-sliders text-indigo-600 text-sm sm:text-lg md:text-xl lg:text-2xl"></i>
+                        <i className="bi bi-sliders text-indigo-600 dark:text-indigo-400 text-sm sm:text-lg md:text-xl lg:text-2xl"></i>
                     </button>
                 </div>
 
                 {/* Filtros */}
                 {showFilters && (
-                    <div className="bg-white bg-opacity-90 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 md:p-6 mb-3 sm:mb-4 md:mb-6 shadow-xl border border-white border-opacity-50">
-                        <h3 className="font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base md:text-lg lg:text-xl">Filtros de Búsqueda</h3>
+                    <div className={`${themeClasses.card} bg-opacity-90 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 md:p-6 mb-3 sm:mb-4 md:mb-6 shadow-xl border border-opacity-50`}>
+                        <h3 className={`font-bold ${themeClasses.text} mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base md:text-lg lg:text-xl`}>Filtros de Búsqueda</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                             <div>
-                                <label className="block text-xs sm:text-sm md:text-base font-medium text-gray-700 mb-1 sm:mb-2">
+                                <label className={`block text-xs sm:text-sm md:text-base font-medium ${themeClasses.text} mb-1 sm:mb-2`}>
                                     Edad (18-35)
                                 </label>
                                 <input 
@@ -152,7 +153,7 @@ const Descubrir: React.FC = () => {
                             </div>
                         </div>
                         
-                        <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 z-10 w-80 h-auto">
+                        <div className={`relative ${themeClasses.card} rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 z-10 w-80 h-auto`}>
                             <div className="h-96 bg-gradient-to-br from-pink-400 via-red-400 to-orange-400 flex items-center justify-center relative">
                                 <i className="text-white text-8xl bi bi-person drop-shadow-2xl"></i>
                                 
@@ -173,16 +174,16 @@ const Descubrir: React.FC = () => {
                             
                             <div className="p-6">
                                 <div className="mb-4">
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                                    <h3 className={`text-2xl font-bold ${themeClasses.text} mb-1`}>
                                         {profile.name}, {profile.age}
                                     </h3>
-                                    <p className="text-gray-600 flex items-center text-base">
+                                    <p className={`${themeClasses.textSecondary} flex items-center text-base`}>
                                         <i className="bi bi-geo-alt text-red-500 mr-2"></i>
                                         {profile.location}
                                     </p>
                                 </div>
                                 
-                                <p className="text-gray-700 text-base leading-relaxed mb-4">
+                                <p className={`${themeClasses.text} text-base leading-relaxed mb-4`}>
                                     {profile.bio}
                                 </p>
                             </div>
@@ -193,20 +194,20 @@ const Descubrir: React.FC = () => {
                         {/* Botón Rechazar */}
                         <button 
                             onClick={handlePass}
-                            className="group bg-white border-2 border-gray-300 hover:border-gray-400 rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95"
+                            className={`group ${themeClasses.card} border-2 ${themeClasses.border} ${themeClasses.hover} rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95`}
                         >
-                            <i className="bi bi-x-lg text-2xl text-gray-500 group-hover:text-gray-600 group-hover:rotate-90 transition-all duration-300"></i>
+                            <i className={`bi bi-x-lg text-2xl ${themeClasses.textMuted} group-hover:text-gray-600 dark:group-hover:text-gray-300 group-hover:rotate-90 transition-all duration-300`}></i>
                         </button>
                         
                         {/* Botón Super Like */}
-                        <button className="group bg-white border-2 border-blue-400 hover:border-blue-500 hover:bg-blue-50 rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95">
+                        <button className={`group ${themeClasses.card} border-2 border-blue-400 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95`}>
                             <i className="bi bi-star-fill text-2xl text-blue-500 group-hover:text-blue-600 group-hover:rotate-12 transition-all duration-300"></i>
                         </button>
                         
                         {/* Botón Like */}
                         <button 
                             onClick={handleLike}
-                            className="group bg-white border-2 border-red-400 hover:border-red-500 hover:bg-red-50 rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95"
+                            className={`group ${themeClasses.card} border-2 border-red-400 hover:border-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95`}
                         >
                             <i className="bi bi-heart-fill text-2xl text-red-500 group-hover:text-red-600 group-hover:scale-125 transition-all duration-300"></i>
                         </button>
@@ -214,10 +215,10 @@ const Descubrir: React.FC = () => {
                     
                     {/* Información adicional */}
                     <div className="text-center mt-6">
-                        <p className="text-gray-600 text-sm">
+                        <p className={`${themeClasses.textSecondary} text-sm`}>
                             {profiles.length - 1 - currentProfile} personas más cerca de ti
                         </p>
-                        <button className="mt-2 text-red-500 font-semibold text-sm hover:text-red-600 transition-colors duration-300">
+                        <button className="mt-2 text-red-500 dark:text-red-400 font-semibold text-sm hover:text-red-600 dark:hover:text-red-300 transition-colors duration-300">
                             Ver más opciones
                         </button>
                     </div>

@@ -10,6 +10,7 @@ import Descubrir from './pages/usuario/descubrir';
 import Previa from './pages/usuario/previa';
 import Fotos from './pages/usuario/fotos';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { ThemeProvider } from './themes';
 
 // Componente para rutas protegidas
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -127,14 +128,16 @@ const AppContent: React.FC = () => {
 };
 
 const App: React.FC = () => (
-  <AuthProvider>
-    <Router future={{ 
-      v7_startTransition: true,
-      v7_relativeSplatPath: true 
-    }}>
-      <AppContent />
-    </Router>
-  </AuthProvider>
+  <ThemeProvider>
+    <AuthProvider>
+      <Router future={{ 
+        v7_startTransition: true,
+        v7_relativeSplatPath: true 
+      }}>
+        <AppContent />
+      </Router>
+    </AuthProvider>
+  </ThemeProvider>
 );
 
 export default App;
