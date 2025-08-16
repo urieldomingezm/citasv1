@@ -33,30 +33,38 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
     // Inicializar contexto al cargar
     useEffect(() => {
-        const initializeAuth = async () => {
-            try {
-                const isAuth = authService.isAuthenticated();
-                setIsAuthenticated(isAuth);
-                
-                if (isAuth) {
-                    const userData = authService.getUserData();
-                    setUser(userData);
-                    
-                    // Intentar obtener perfil actualizado del servidor
-                    const profileResult = await authService.getProfile();
-                    if (profileResult.success && profileResult.data) {
-                        setUser(profileResult.data);
-                    }
-                }
-            } catch (error) {
-                console.error('Error inicializando autenticación:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
+    const checkAuth = () => {
+      try {
+        setLoading(true);
+        
+        const isAuth = authService.isAuthenticated();
+        if (isAuth) {
+          // Obtener datos del usuario desde localStorage
+          const userData = authService.getUserData();
+          
+          if (userData) {
+            setUser(userData);
+            setIsAuthenticated(true);
+          } else {
+            // Si no hay datos de usuario, limpiar autenticación
+            setIsAuthenticated(false);
+            setUser(null);
+          }
+        } else {
+          setIsAuthenticated(false);
+          setUser(null);
+        }
+      } catch (error) {
+        console.error('Error verificando autenticación:', error);
+        setIsAuthenticated(false);
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-        initializeAuth();
-    }, []);
+    checkAuth();
+  }, []);
 
     const login = async (credentials: LoginRequest): Promise<boolean> => {
         try {

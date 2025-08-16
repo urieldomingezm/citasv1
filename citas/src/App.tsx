@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import UserHome from './pages/usuario/home';
@@ -20,12 +20,33 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
 // Componente para rutas públicas (solo para no autenticados)
 const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isAuthenticated } = useAuth();
-  return !isAuthenticated ? <>{children}</> : <Navigate to="/usuario/home" replace />;
+  
+  if (isAuthenticated) {
+    const lastRoute = localStorage.getItem('lastRoute');
+    return <Navigate to={lastRoute || "/usuario/descubrir"} replace />;
+  }
+  
+  return <>{children}</>;
+};
+
+// Componente para rastrear rutas y guardarlas
+const RouteTracker: React.FC = () => {
+  const location = useLocation();
+  const { isAuthenticated } = useAuth();
+
+  useEffect(() => {
+    if (isAuthenticated && location.pathname.startsWith('/usuario/')) {
+      localStorage.setItem('lastRoute', location.pathname);
+    }
+  }, [location.pathname, isAuthenticated]);
+
+  return null;
 };
 
 const AppContent: React.FC = () => {
   return (
     <Layout>
+      <RouteTracker />
       <Routes>
         {/* Ruta pública */}
         <Route 
