@@ -17,33 +17,20 @@ const Fotos: React.FC = () => {
     const emptySlots = 9 - photos.length;
 
     return (
-        <div className={`min-h-screen ${themeClasses.backgroundSecondary} bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 relative overflow-hidden transition-colors duration-300`}>
+        <div className={`min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 dark:from-black dark:via-black dark:to-black relative overflow-hidden transition-colors duration-300`}>
             {/* Elementos decorativos de fondo */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-300 to-cyan-400 dark:from-blue-600 dark:to-cyan-600 rounded-full mix-blend-multiply filter blur-xl opacity-70 dark:opacity-40 animate-pulse"></div>
-                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-cyan-300 to-indigo-400 dark:from-cyan-600 dark:to-indigo-600 rounded-full mix-blend-multiply filter blur-xl opacity-70 dark:opacity-40 animate-pulse animation-delay-2000"></div>
+                <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-300 to-cyan-400 dark:from-blue-800 dark:to-cyan-800 rounded-full mix-blend-multiply filter blur-xl opacity-70 dark:opacity-30 animate-pulse"></div>
+                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-cyan-300 to-indigo-400 dark:from-cyan-800 dark:to-indigo-800 rounded-full mix-blend-multiply filter blur-xl opacity-70 dark:opacity-30 animate-pulse animation-delay-2000"></div>
             </div>
 
             {/* Encabezado */}
-            <section className="relative bg-blue-600 dark:bg-blue-700 text-white py-8 px-6 shadow-xl">
-                <div className="relative max-w-6xl mx-auto flex items-center justify-between">
-                    <div>
-                        <h1 className="text-3xl md:text-4xl font-bold text-white">
-                            Mis Fotos
-                        </h1>
-                        <p className="text-blue-100 dark:text-blue-200 mt-1 font-medium">Gestiona tu galería personal</p>
-                    </div>
-                    <div className="flex space-x-3">
-                        <button 
-                            onClick={() => setUploadMode(!uploadMode)}
-                            className={`${themeClasses.card} text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900 transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105 ${themeClasses.hover}`}
-                        >
-                            <i className="bi bi-plus-lg text-lg"></i>
-                        </button>
-                        <button className={`${themeClasses.card} text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900 transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105 ${themeClasses.hover}`}>
-                            <i className="bi bi-gear text-lg"></i>
-                        </button>
-                    </div>
+            <section className="relative bg-blue-600 dark:bg-blue-800 text-white py-8 px-6 shadow-xl">
+                <div className="relative max-w-6xl mx-auto flex flex-col items-center justify-center text-center">
+                    <h1 className="text-3xl md:text-4xl font-bold text-white">
+                        Mis Fotos
+                    </h1>
+                    <p className="text-blue-100 dark:text-blue-300 mt-1 font-medium">Gestiona tu galería personal</p>
                 </div>
             </section>
 
@@ -51,42 +38,42 @@ const Fotos: React.FC = () => {
             <section className="relative py-8 px-6">
                 <div className="max-w-4xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                        <div className={`${themeClasses.card} rounded-2xl p-4 text-center shadow-lg ${themeClasses.border}`}>
-                            <div className="bg-gradient-to-br from-blue-500 to-cyan-600 dark:from-blue-600 dark:to-cyan-700 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                        <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 text-center shadow-lg border border-gray-200 dark:border-gray-700">
+                            <div className="bg-gradient-to-br from-indigo-500 to-purple-600 dark:from-indigo-600 dark:to-purple-700 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
                                 <i className="bi bi-images text-white text-xl"></i>
                             </div>
-                            <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{photos.length}</div>
-                            <div className={`text-xs ${themeClasses.text} text-gray-700 dark:text-gray-300 font-semibold`}>Fotos subidas</div>
+                            <div className="text-2xl font-bold text-white">{photos.length}</div>
+                            <div className="text-xs text-white font-semibold">Fotos subidas</div>
                         </div>
                         
-                        <div className={`${themeClasses.card} rounded-2xl p-4 text-center shadow-lg ${themeClasses.border}`}>
-                            <div className="bg-gradient-to-br from-emerald-500 to-teal-600 dark:from-emerald-600 dark:to-teal-700 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                        <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 text-center shadow-lg border border-gray-200 dark:border-gray-700">
+                            <div className="bg-gradient-to-br from-indigo-500 to-purple-600 dark:from-indigo-600 dark:to-purple-700 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
                                 <i className="bi bi-heart-fill text-white text-xl"></i>
                             </div>
-                            <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+                            <div className="text-2xl font-bold text-white">
                                 {photos.reduce((sum, photo) => sum + photo.likes, 0)}
                             </div>
-                            <div className={`text-xs ${themeClasses.text} text-gray-700 dark:text-gray-300 font-semibold`}>Total likes</div>
+                            <div className="text-xs text-white font-semibold">Total likes</div>
                         </div>
                         
-                        <div className={`${themeClasses.card} rounded-2xl p-4 text-center shadow-lg ${themeClasses.border}`}>
+                        <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 text-center shadow-lg border border-gray-200 dark:border-gray-700">
                             <div className="bg-gradient-to-br from-indigo-500 to-purple-600 dark:from-indigo-600 dark:to-purple-700 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
                                 <i className="bi bi-eye-fill text-white text-xl"></i>
                             </div>
-                            <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                            <div className="text-2xl font-bold text-white">
                                 {photos.reduce((sum, photo) => sum + photo.views, 0)}
                             </div>
-                            <div className={`text-xs ${themeClasses.text} text-gray-700 dark:text-gray-300 font-semibold`}>Total vistas</div>
+                            <div className="text-xs text-white font-semibold">Total vistas</div>
                         </div>
                         
-                        <div className={`${themeClasses.card} rounded-2xl p-4 text-center shadow-lg ${themeClasses.border}`}>
-                            <div className="bg-gradient-to-br from-amber-500 to-orange-600 dark:from-amber-600 dark:to-orange-700 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                        <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-4 text-center shadow-lg border border-gray-200 dark:border-gray-700">
+                            <div className="bg-gradient-to-br from-indigo-500 to-purple-600 dark:from-indigo-600 dark:to-purple-700 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-2">
                                 <i className="bi bi-star-fill text-white text-xl"></i>
                             </div>
-                            <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
+                            <div className="text-2xl font-bold text-white">
                                 {Math.round((photos.reduce((sum, photo) => sum + photo.likes, 0) / photos.reduce((sum, photo) => sum + photo.views, 0)) * 100)}%
                             </div>
-                            <div className={`text-xs ${themeClasses.text} text-gray-700 dark:text-gray-300 font-semibold`}>Engagement</div>
+                            <div className="text-xs text-white font-semibold">Engagement</div>
                         </div>
                     </div>
                 </div>
@@ -95,7 +82,7 @@ const Fotos: React.FC = () => {
             {/* Galería de Fotos */}
             <section className="relative py-8 px-6">
                 <div className="max-w-4xl mx-auto">
-                    <h2 className={`text-2xl font-bold bg-gradient-to-r from-indigo-600 to-cyan-600 dark:from-indigo-400 dark:to-cyan-400 bg-clip-text text-transparent mb-8 text-center`}>
+                    <h2 className="text-2xl font-bold text-white dark:text-white mb-8 text-center">
                         Tu Galería Personal
                     </h2>
                     
@@ -103,11 +90,11 @@ const Fotos: React.FC = () => {
                         {photos.map((photo) => (
                             <div 
                                 key={photo.id} 
-                                className={`group relative aspect-square bg-gradient-to-br from-blue-200 to-indigo-300 dark:from-blue-700 dark:to-indigo-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer ${themeClasses.hover}`}
+                                className="group relative aspect-[4/3] bg-gradient-to-br from-blue-200 to-indigo-300 dark:from-blue-800 dark:to-indigo-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
                                 onClick={() => setSelectedPhoto(photo.id)}
                             >
                                 {/* Contenido de la foto */}
-                                <div className="relative h-full flex items-center justify-center bg-gradient-to-br from-blue-300 to-indigo-400 dark:from-blue-600 dark:to-indigo-700">
+                                <div className="relative h-full flex items-center justify-center bg-gradient-to-br from-blue-300 to-indigo-400 dark:from-blue-700 dark:to-indigo-800">
                                     <i className="bi bi-image text-white text-4xl"></i>
                                 </div>
                                 
@@ -167,8 +154,8 @@ const Fotos: React.FC = () => {
 
             {/* Modal de subir foto */}
             {uploadMode && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-                    <div className={`${themeClasses.modal} bg-opacity-95 backdrop-blur-xl rounded-3xl p-8 max-w-md w-full shadow-2xl border border-white dark:border-gray-600 border-opacity-20`}>
+                <div className="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+                    <div className="bg-white dark:bg-gray-800 bg-opacity-95 dark:bg-opacity-100 backdrop-blur-xl rounded-3xl p-8 max-w-md w-full shadow-2xl border border-white dark:border-gray-600">
                         <div className="text-center">
                             <h3 className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 dark:from-violet-400 dark:to-fuchsia-400 bg-clip-text text-transparent mb-4">
                                 Subir Nueva Foto
@@ -199,15 +186,15 @@ const Fotos: React.FC = () => {
 
             {/* Modal de vista detallada de foto */}
             {selectedPhoto && (
-                <div className="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-                    <div className="bg-white bg-opacity-95 backdrop-blur-xl rounded-3xl p-6 max-w-2xl w-full shadow-2xl border border-white border-opacity-20">
+                <div className="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+                    <div className="bg-white dark:bg-gray-800 bg-opacity-95 dark:bg-opacity-100 backdrop-blur-xl rounded-3xl p-6 max-w-2xl w-full shadow-2xl border border-white dark:border-gray-600">
                         <div className="flex justify-between items-center mb-6">
-                            <h3 className="text-xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
+                            <h3 className="text-xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 dark:from-violet-400 dark:to-fuchsia-400 bg-clip-text text-transparent">
                                 Detalles de la Foto
                             </h3>
                             <button 
                                 onClick={() => setSelectedPhoto(null)}
-                                className="text-gray-500 hover:text-gray-700 text-2xl"
+                                className="text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100 text-2xl"
                             >
                                 <i className="bi bi-x"></i>
                             </button>
@@ -242,65 +229,6 @@ const Fotos: React.FC = () => {
                 </div>
             )}
 
-            {/* Consejos para Fotos */}
-            <section className="relative py-12 px-6">
-                <div className="max-w-4xl mx-auto">
-                    <div className="bg-white bg-opacity-90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white border-opacity-20">
-                        <h3 className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text mb-6 text-center">
-                            Tips para Fotos Perfectas
-                        </h3>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                            <div className="flex items-start space-x-4">
-                                <div className="bg-green-100 text-green-600 rounded-full p-2 flex-shrink-0">
-                                    <i className="bi bi-check-lg text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold text-gray-800 mb-1">Buena Iluminación</h4>
-                                    <p className="text-gray-600 text-sm">Usa luz natural siempre que sea posible</p>
-                                </div>
-                            </div>
-                            
-                            <div className="flex items-start space-x-4">
-                                <div className="bg-blue-100 text-blue-600 rounded-full p-2 flex-shrink-0">
-                                    <i className="bi bi-camera text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold text-gray-800 mb-1">Variedad</h4>
-                                    <p className="text-gray-600 text-sm">Incluye fotos de cuerpo completo y primeros planos</p>
-                                </div>
-                            </div>
-                            
-                            <div className="flex items-start space-x-4">
-                                <div className="bg-purple-100 text-purple-600 rounded-full p-2 flex-shrink-0">
-                                    <i className="bi bi-person text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold text-gray-800 mb-1">Sé Auténtico</h4>
-                                    <p className="text-gray-600 text-sm">Muestra tu personalidad real y sonríe</p>
-                                </div>
-                            </div>
-                            
-                            <div className="flex items-start space-x-4">
-                                <div className="bg-yellow-100 text-yellow-600 rounded-full p-2 flex-shrink-0">
-                                    <i className="bi bi-heart text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold text-gray-800 mb-1">Actividades</h4>
-                                    <p className="text-gray-600 text-sm">Incluye fotos haciendo lo que te gusta</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="text-center">
-                            <button className="bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                                <i className="bi bi-camera mr-2"></i>
-                                Tomar Foto Ahora
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };
