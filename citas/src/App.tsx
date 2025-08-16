@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import UserHome from './pages/usuario/home';
-import Matches from './pages/usuario/matches'; // Asegúrate de que la ruta de importación sea correcta
+import Matches from './pages/usuario/matches';
 import Mensajes from './pages/usuario/mensajes';
 import Perfil from './pages/usuario/perfil';
 import Descubrir from './pages/usuario/descubrir';
