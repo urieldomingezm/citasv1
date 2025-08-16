@@ -7,7 +7,6 @@ const Mensajes: React.FC = () => {
             <section className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 sm:py-6 md:py-8 lg:py-12 px-2 sm:px-4 md:px-6">
                 <div className="max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto text-center">
                     <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-1 sm:mb-2 md:mb-4 text-white">
-                        <i className="bi bi-chat-heart mr-2 sm:mr-3"></i>
                         Mensajes
                     </h1>
                     <p className="text-xs sm:text-sm md:text-base lg:text-lg text-blue-100">Conecta y conversa con tus matches</p>

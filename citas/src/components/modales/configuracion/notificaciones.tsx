@@ -40,7 +40,7 @@ const NotificacionesModal: React.FC<NotificacionesModalProps> = ({ isOpen, onClo
                 <div className="sticky top-0 bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-3 sm:p-4 rounded-t-2xl">
                     <div className="flex items-center justify-between">
                         <div>
-                            <h2 className="text-lg sm:text-xl font-bold text-white">Notificaciones 🔔</h2>
+                            <h2 className="text-lg sm:text-xl font-bold text-white">Notificaciones</h2>
                             <p className="text-blue-100 text-xs sm:text-sm">Controla tus alertas</p>
                         </div>
                         <button 

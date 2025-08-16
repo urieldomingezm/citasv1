@@ -28,7 +28,7 @@ const Fotos: React.FC = () => {
                 <div className="relative max-w-6xl mx-auto flex items-center justify-between">
                     <div>
                         <h1 className="text-3xl md:text-4xl font-bold text-white">
-                            Mis Fotos 📸
+                            Mis Fotos
                         </h1>
                         <p className="text-blue-100 mt-1 font-medium">Gestiona tu galería personal</p>
                     </div>

@@ -8,7 +8,7 @@ const UserHome: React.FC = () => {
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-8">
                         <h1 className="text-3xl md:text-4xl font-bold mb-4">
-                            ¡Bienvenido de vuelta! 💕
+                            ¡Bienvenido de vuelta!
                         </h1>
                         <p className="text-lg opacity-90">
                             Tu siguiente conexión especial podría estar esperándote

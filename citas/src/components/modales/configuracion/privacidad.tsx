@@ -31,7 +31,7 @@ const PrivacidadModal: React.FC<PrivacidadModalProps> = ({ isOpen, onClose }) =>
                 <div className="sticky top-0 bg-gradient-to-r from-red-500 to-pink-600 text-white p-3 sm:p-4 rounded-t-2xl">
                     <div className="flex items-center justify-between">
                         <div>
-                            <h2 className="text-lg sm:text-xl font-bold text-white">Privacidad 🔒</h2>
+                            <h2 className="text-lg sm:text-xl font-bold text-white">Privacidad</h2>
                             <p className="text-red-100 text-xs sm:text-sm">Controla tu información</p>
                         </div>
                         <button 

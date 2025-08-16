@@ -63,7 +63,7 @@ const HeaderNavbar: React.FC = () => {
                         </span>
                         {isAuthenticated && user && (
                             <span className="text-sm text-gray-500">
-                                Hola, {user.username} 👋
+                                Hola, {user.username}
                             </span>
                         )}
                     </div>

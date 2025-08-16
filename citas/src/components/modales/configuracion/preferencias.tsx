@@ -36,11 +36,11 @@ const PreferenciasModal: React.FC<PreferenciasModalProps> = ({ isOpen, onClose }
         <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4">
             <div className="bg-white bg-opacity-95 backdrop-blur-xl rounded-2xl w-full max-w-md sm:max-w-lg max-h-[95vh] overflow-y-auto shadow-2xl border border-white border-opacity-20">
                 {/* Header */}
-                <div className="sticky top-0 bg-gradient-to-r from-green-500 to-emerald-600 text-white p-3 sm:p-4 rounded-t-2xl">
+                <div className="sticky top-0 bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-3 sm:p-4 rounded-t-2xl">
                     <div className="flex items-center justify-between">
                         <div>
-                            <h2 className="text-lg sm:text-xl font-bold text-white">Preferencias ⚙️</h2>
-                            <p className="text-green-100 text-xs sm:text-sm">Personaliza tu experiencia</p>
+                            <h2 className="text-lg sm:text-xl font-bold text-white">Preferencias</h2>
+                            <p className="text-blue-100 text-xs sm:text-sm">Personaliza tu experiencia</p>
                         </div>
                         <button 
                             onClick={onClose}

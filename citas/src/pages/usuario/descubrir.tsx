@@ -100,19 +100,15 @@ const Descubrir: React.FC = () => {
                     </div>
                 )}
 
-            {/* Stack de Tarjetas con Lados Pegados */}
             <section className="relative py-8 px-4">
                 <div className="max-w-md mx-auto">
                     <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent mb-6">
                         Descubre personas increíbles
                     </h2>
                     
-                    {/* Container del Stack de Tarjetas */}
                     <div className="relative flex items-center justify-center">
                         
-                        {/* Lado Izquierdo - Cartas con Like/Pass (Más grandes) */}
-                        <div className="absolute -left-20 top-1/2 transform -translate-y-1/2 flex flex-col space-y-2 z-20">
-                            {/* Carta de Like anterior */}
+                        <div className="absolute -left-20 top-1/2 transform -translate-y-1/2 flex flex-col space-y-2 z-0">
                             <div className="bg-white rounded-xl shadow-lg overflow-hidden opacity-70 scale-80 transform -rotate-20 w-44 h-56">
                                 <div className="h-28 bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
                                     <i className="text-white text-3xl bi bi-heart-fill"></i>
@@ -122,7 +118,6 @@ const Descubrir: React.FC = () => {
                                 </div>
                             </div>
                             
-                            {/* Carta de Pass anterior */}
                             <div className="bg-white rounded-xl shadow-lg overflow-hidden opacity-60 scale-75 transform -rotate-12 w-44 h-56">
                                 <div className="h-28 bg-gradient-to-br from-gray-400 to-slate-500 flex items-center justify-center">
                                     <i className="text-white text-3xl bi bi-x-lg"></i>
@@ -133,9 +128,7 @@ const Descubrir: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Lado Derecho - Próximas Cartas (Más grandes) */}
-                        <div className="absolute -right-20 top-1/2 transform -translate-y-1/2 flex flex-col space-y-2 z-20">
-                            {/* Próxima carta 1 */}
+                        <div className="absolute -right-20 top-1/2 transform -translate-y-1/2 flex flex-col space-y-2 z-0">
                             <div className="bg-white rounded-xl shadow-lg overflow-hidden opacity-70 scale-80 transform rotate-20 w-44 h-56">
                                 <div className="h-28 bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center">
                                     <i className="text-white text-3xl bi bi-person"></i>
@@ -147,7 +140,6 @@ const Descubrir: React.FC = () => {
                                 </div>
                             </div>
                             
-                            {/* Próxima carta 2 */}
                             <div className="bg-white rounded-xl shadow-lg overflow-hidden opacity-60 scale-75 transform rotate-12 w-44 h-56">
                                 <div className="h-28 bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
                                     <i className="text-white text-3xl bi bi-person"></i>
@@ -160,31 +152,25 @@ const Descubrir: React.FC = () => {
                             </div>
                         </div>
                         
-                        {/* Tarjeta Principal - Centro con toda la información */}
-                        <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 z-30 w-80 h-auto">
-                            {/* Imagen de Perfil */}
+                        <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105 z-10 w-80 h-auto">
                             <div className="h-96 bg-gradient-to-br from-pink-400 via-red-400 to-orange-400 flex items-center justify-center relative">
                                 <i className="text-white text-8xl bi bi-person drop-shadow-2xl"></i>
                                 
-                                {/* Badge de distancia */}
                                 <div className="absolute top-4 right-4 bg-black bg-opacity-60 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
                                     <i className="bi bi-geo-alt mr-1"></i>
                                     {profile.distance}
                                 </div>
                                 
-                                {/* Indicador online */}
                                 <div className="absolute top-4 left-4 flex items-center bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
                                     <div className="w-2 h-2 bg-green-300 rounded-full mr-2 animate-pulse"></div>
                                     Activo ahora
                                 </div>
 
-                                {/* Botón de información */}
                                 <button className="absolute bottom-4 right-4 bg-white bg-opacity-20 backdrop-blur-sm text-white rounded-full p-3 hover:bg-opacity-30 transition-all duration-300">
                                     <i className="bi bi-info-circle text-lg"></i>
                                 </button>
                             </div>
                             
-                            {/* Información del Perfil Completa */}
                             <div className="p-6">
                                 <div className="mb-4">
                                     <h3 className="text-2xl font-bold text-gray-900 mb-1">
@@ -203,7 +189,6 @@ const Descubrir: React.FC = () => {
                         </div>
                     </div>
                     
-                    {/* Botones de Acción Estilo Tinder */}
                     <div className="flex justify-center items-center space-x-6 mt-8">
                         {/* Botón Rechazar */}
                         <button 
