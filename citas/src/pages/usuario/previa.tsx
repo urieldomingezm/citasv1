@@ -24,21 +24,11 @@ const Previa: React.FC = () => {
 
             {/* Encabezado */}
             <section className="relative bg-blue-600 text-white py-8 px-6 shadow-xl">
-                <div className="relative max-w-6xl mx-auto flex items-center justify-between">
-                    <div>
-                        <h1 className="text-3xl md:text-4xl font-bold text-white">
-                            Vista Previa
-                        </h1>
-                        <p className="text-white mt-1 font-medium">Así te ven otros usuarios</p>
-                    </div>
-                    <div className="flex space-x-3">
-                        <button className={`${themeClasses.card} text-blue-600 dark:text-blue-400 ${themeClasses.hover} transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105`}>
-                            <i className="bi bi-pencil text-lg"></i>
-                        </button>
-                        <button className={`${themeClasses.card} text-blue-600 dark:text-blue-400 ${themeClasses.hover} transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105`}>
-                            <i className="bi bi-share text-lg"></i>
-                        </button>
-                    </div>
+                <div className="relative max-w-6xl mx-auto flex flex-col items-center justify-center text-center">
+                    <h1 className="text-3xl md:text-4xl font-bold text-white">
+                        Vista Previa
+                    </h1>
+                    <p className="text-white mt-1 font-medium">Así te ven otros usuarios</p>
                 </div>
             </section>
 
