@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface MenuSegundoNivelProps {
     onItemClick?: () => void;
     onLogout?: () => void;
+    onConfigModalOpen?: (modalName: string) => void;
 }
 
-const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogout }) => {
+const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogout, onConfigModalOpen }) => {
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
     const toggleDropdown = (dropdownName: string) => {
         setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
+    };
+
+    const openModal = (modalName: string) => {
+        onConfigModalOpen?.(modalName);
+        setActiveDropdown(null); // Cerrar dropdown al abrir modal
     };
 
     const handleLogout = () => {
@@ -39,40 +46,40 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
 
             {/* Descubrir */}
             <li>
-                <a
-                    href="#"
+                <Link
+                    to="/usuario/descubrir"
                     className="block py-2 px-3 rounded hover:bg-gray-200 flex items-center space-x-2"
                     onClick={onItemClick}
                 >
                     <i className="bi bi-search-heart text-pink-600"></i>
                     <span>Descubrir</span>
-                </a>
+                </Link>
             </li>
 
             {/* Mensajes */}
             <li>
-                <a
-                    href="#"
+                <Link
+                    to="/usuario/mensajes"
                     className="block py-2 px-3 rounded hover:bg-gray-200 flex items-center space-x-2"
                     onClick={onItemClick}
                 >
                     <i className="bi bi-chat-dots text-green-600"></i>
                     <span>Mensajes</span>
                     <span className="ml-auto bg-red-500 text-white text-xs rounded-full px-2 py-1">3</span>
-                </a>
+                </Link>
             </li>
 
             {/* Matches */}
             <li>
-                <a
-                    href="#"
+                <Link
+                    to="/usuario/matches"
                     className="block py-2 px-3 rounded hover:bg-gray-200 flex items-center space-x-2"
                     onClick={onItemClick}
                 >
                     <i className="bi bi-heart-fill text-red-600"></i>
                     <span>Mis Matches</span>
                     <span className="ml-auto bg-pink-500 text-white text-xs rounded-full px-2 py-1">12</span>
-                </a>
+                </Link>
             </li>
 
             {/* Mi Perfil - Con Dropdown */}
@@ -88,34 +95,34 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
                 {activeDropdown === 'perfil' && (
                     <ul className="ml-4 mt-1 space-y-1">
                         <li>
-                            <a
-                                href="#"
+                            <Link
+                                to="/usuario/perfil"
                                 className="block py-1 px-3 text-sm rounded hover:bg-gray-100 flex items-center space-x-2"
                                 onClick={onItemClick}
                             >
                                 <i className="bi bi-pencil text-gray-500"></i>
                                 <span>Editar Perfil</span>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="#"
+                            <Link
+                                to="/usuario/fotos"
                                 className="block py-1 px-3 text-sm rounded hover:bg-gray-100 flex items-center space-x-2"
                                 onClick={onItemClick}
                             >
                                 <i className="bi bi-images text-gray-500"></i>
                                 <span>Mis Fotos</span>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
-                                href="#"
+                            <Link
+                                to="/usuario/previa"
                                 className="block py-1 px-3 text-sm rounded hover:bg-gray-100 flex items-center space-x-2"
                                 onClick={onItemClick}
                             >
                                 <i className="bi bi-eye text-gray-500"></i>
                                 <span>Vista Previa</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 )}
@@ -134,34 +141,31 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
                 {activeDropdown === 'config' && (
                     <ul className="ml-4 mt-1 space-y-1">
                         <li>
-                            <a
-                                href="#"
-                                className="block py-1 px-3 text-sm rounded hover:bg-gray-100 flex items-center space-x-2"
-                                onClick={onItemClick}
+                            <button
+                                className="w-full text-left block py-1 px-3 text-sm rounded hover:bg-gray-100 flex items-center space-x-2"
+                                onClick={() => openModal('notificaciones')}
                             >
                                 <i className="bi bi-bell text-gray-500"></i>
                                 <span>Notificaciones</span>
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a
-                                href="#"
-                                className="block py-1 px-3 text-sm rounded hover:bg-gray-100 flex items-center space-x-2"
-                                onClick={onItemClick}
+                            <button
+                                className="w-full text-left block py-1 px-3 text-sm rounded hover:bg-gray-100 flex items-center space-x-2"
+                                onClick={() => openModal('privacidad')}
                             >
                                 <i className="bi bi-shield-check text-gray-500"></i>
                                 <span>Privacidad</span>
-                            </a>
+                            </button>
                         </li>
                         <li>
-                            <a
-                                href="#"
-                                className="block py-1 px-3 text-sm rounded hover:bg-gray-100 flex items-center space-x-2"
-                                onClick={onItemClick}
+                            <button
+                                className="w-full text-left block py-1 px-3 text-sm rounded hover:bg-gray-100 flex items-center space-x-2"
+                                onClick={() => openModal('preferencias')}
                             >
                                 <i className="bi bi-sliders text-gray-500"></i>
                                 <span>Preferencias</span>
-                            </a>
+                            </button>
                         </li>
                     </ul>
                 )}

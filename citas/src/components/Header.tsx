@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MenuPrimerNivel from './menu/primer-nivel';
 import MenuSegundoNivel from './menu/segundo-nivel';
 import LoginModal from './modales/login/LoginModal';
+import { NotificacionesModal, PreferenciasModal, PrivacidadModal } from './modales/configuracion';
 // import RegisterModal from './modales/login/RegisterModal';
 import { useAuth } from '../context/AuthContext';
 import Alert from './Alert';
@@ -11,6 +12,7 @@ const HeaderNavbar: React.FC = () => {
     const [loginModalOpen, setLoginModalOpen] = useState(false);
     const [registerModalOpen, setRegisterModalOpen] = useState(false);
     const [showLogoutAlert, setShowLogoutAlert] = useState(false);
+    const [activeConfigModal, setActiveConfigModal] = useState<string | null>(null);
     const { login, logout, isAuthenticated, user } = useAuth();
 
     const handleLoginSuccess = () => {
@@ -31,6 +33,15 @@ const HeaderNavbar: React.FC = () => {
         setTimeout(() => {
             logout();
         }, 2000);
+    };
+
+    const openConfigModal = (modalName: string) => {
+        setActiveConfigModal(modalName);
+        setOpen(false); // Cerrar el menú cuando se abre un modal
+    };
+
+    const closeConfigModal = () => {
+        setActiveConfigModal(null);
     };
 
     return (
@@ -68,6 +79,7 @@ const HeaderNavbar: React.FC = () => {
                     <MenuSegundoNivel 
                         onItemClick={() => setOpen(false)}
                         onLogout={handleLogout}
+                        onConfigModalOpen={openConfigModal}
                     />
                 ) : (
                     <MenuPrimerNivel 
@@ -96,6 +108,20 @@ const HeaderNavbar: React.FC = () => {
                 onClose={() => setRegisterModalOpen(false)} 
                 onRegisterSuccess={handleRegisterSuccess}
             /> */}
+            
+            {/* Modales de Configuración */}
+            <NotificacionesModal 
+                isOpen={activeConfigModal === 'notificaciones'} 
+                onClose={closeConfigModal} 
+            />
+            <PreferenciasModal 
+                isOpen={activeConfigModal === 'preferencias'} 
+                onClose={closeConfigModal} 
+            />
+            <PrivacidadModal 
+                isOpen={activeConfigModal === 'privacidad'} 
+                onClose={closeConfigModal} 
+            />
             
             {/* Alerta de cierre de sesión */}
             <Alert

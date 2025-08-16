@@ -1,0 +1,236 @@
+import React, { useState } from 'react';
+
+const Previa: React.FC = () => {
+    const [currentPhoto, setCurrentPhoto] = useState(0);
+    
+    const photos = [1, 2, 3, 4, 5, 6];
+
+    const nextPhoto = () => {
+        setCurrentPhoto((prev) => (prev + 1) % photos.length);
+    };
+
+    const prevPhoto = () => {
+        setCurrentPhoto((prev) => (prev - 1 + photos.length) % photos.length);
+    };
+
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
+            {/* Elementos decorativos de fondo */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-300 to-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-purple-300 to-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse animation-delay-2000"></div>
+            </div>
+
+            {/* Encabezado */}
+            <section className="relative bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white py-8 px-6 shadow-xl">
+                <div className="absolute inset-0 bg-white bg-opacity-10 backdrop-blur-sm"></div>
+                <div className="relative max-w-6xl mx-auto flex items-center justify-between">
+                    <div>
+                        <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-indigo-100 bg-clip-text text-transparent">
+                            Vista Previa 👁️
+                        </h1>
+                        <p className="text-indigo-100 mt-1 font-medium">Así te ven otros usuarios</p>
+                    </div>
+                    <div className="flex space-x-3">
+                        <button className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm border border-white border-opacity-30 transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <i className="bi bi-pencil text-lg"></i>
+                        </button>
+                        <button className="bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm border border-white border-opacity-30 transition-all duration-300 rounded-2xl p-3 shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <i className="bi bi-share text-lg"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            {/* Contenido Principal */}
+            <section className="relative py-12 px-6">
+                <div className="max-w-md mx-auto">
+                    {/* Tarjeta de Perfil como la verían otros */}
+                    <div className="relative bg-white bg-opacity-95 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden mb-8 border border-white border-opacity-20" style={{ height: '700px' }}>
+                        {/* Carrusel de Fotos */}
+                        <div className="relative h-2/3 bg-gradient-to-br from-indigo-200 via-purple-200 to-indigo-300 overflow-hidden">
+                            {/* Efectos de fondo */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-indigo-300 to-purple-400 opacity-70"></div>
+                            <div className="absolute top-10 left-10 w-20 h-20 bg-white bg-opacity-30 rounded-full blur-xl animate-pulse"></div>
+                            <div className="absolute bottom-10 right-10 w-32 h-32 bg-purple-300 bg-opacity-40 rounded-full blur-2xl animate-pulse animation-delay-1000"></div>
+                            
+                            {/* Foto Principal */}
+                            <div className="relative flex items-center justify-center h-full">
+                                <i className="bi bi-person text-white text-9xl drop-shadow-lg"></i>
+                            </div>
+
+                            {/* Controles de navegación de fotos */}
+                            <button 
+                                onClick={prevPhoto}
+                                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 transition-all duration-300"
+                            >
+                                <i className="bi bi-chevron-left text-xl"></i>
+                            </button>
+                            <button 
+                                onClick={nextPhoto}
+                                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 transition-all duration-300"
+                            >
+                                <i className="bi bi-chevron-right text-xl"></i>
+                            </button>
+
+                            {/* Indicadores de fotos */}
+                            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                {photos.map((_, index) => (
+                                    <div
+                                        key={index}
+                                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                            index === currentPhoto 
+                                                ? 'bg-white w-6' 
+                                                : 'bg-white bg-opacity-50'
+                                        }`}
+                                    ></div>
+                                ))}
+                            </div>
+
+                            {/* Badge de verificado */}
+                            <div className="absolute top-6 right-6 bg-blue-500 bg-opacity-90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg flex items-center">
+                                <i className="bi bi-patch-check-fill mr-1"></i>
+                                Verificado
+                            </div>
+
+                            {/* Badge de estado */}
+                            <div className="absolute top-6 left-6 flex items-center bg-green-500 bg-opacity-90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                                <div className="w-2 h-2 bg-green-300 rounded-full mr-2 animate-pulse"></div>
+                                Activo ahora
+                            </div>
+                        </div>
+                        
+                        {/* Información del Perfil */}
+                        <div className="h-1/3 p-6 bg-gradient-to-b from-white to-gray-50">
+                            <div className="flex items-start justify-between mb-4">
+                                <div className="flex-1">
+                                    <h2 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-1">
+                                        Tu Nombre, 25
+                                    </h2>
+                                    <p className="text-gray-600 flex items-center font-medium mb-2">
+                                        <i className="bi bi-geo-alt text-indigo-500 mr-2"></i>
+                                        Tu Ciudad, País
+                                    </p>
+                                    <div className="flex items-center space-x-4 text-sm text-gray-500">
+                                        <span className="flex items-center">
+                                            <i className="bi bi-eye text-indigo-400 mr-1"></i>
+                                            127 vistas
+                                        </span>
+                                        <span className="flex items-center">
+                                            <i className="bi bi-heart text-pink-400 mr-1"></i>
+                                            23 likes
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col space-y-2">
+                                    <div className="bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-600 rounded-full p-2 text-center">
+                                        <i className="bi bi-heart text-lg"></i>
+                                    </div>
+                                    <div className="bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-600 rounded-full p-2 text-center">
+                                        <i className="bi bi-star text-lg"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                                "Amo viajar y conocer nuevas culturas. Buscando a alguien con quien compartir aventuras increíbles y crear recuerdos únicos."
+                            </p>
+                            
+                            <div className="flex flex-wrap gap-2">
+                                {['Viajes', 'Fotografía', 'Música', 'Arte'].map((interest, index) => (
+                                    <span 
+                                        key={index} 
+                                        className="bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium border border-indigo-200"
+                                    >
+                                        {interest}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Botones de Acción como los verían otros */}
+                    <div className="flex justify-center items-center space-x-8 mb-8">
+                        <button className="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-600 rounded-full p-5 shadow-xl border border-gray-300 cursor-not-allowed opacity-70">
+                            <i className="bi bi-x-lg text-3xl"></i>
+                        </button>
+                        
+                        <button className="bg-gradient-to-br from-blue-400 to-indigo-500 text-white rounded-full p-5 shadow-xl cursor-not-allowed opacity-70">
+                            <i className="bi bi-star-fill text-3xl"></i>
+                        </button>
+                        
+                        <button className="bg-gradient-to-br from-pink-400 to-rose-500 text-white rounded-full p-5 shadow-xl cursor-not-allowed opacity-70">
+                            <i className="bi bi-heart-fill text-3xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            {/* Consejos para Mejorar el Perfil */}
+            <section className="relative py-12 px-6">
+                <div className="max-w-4xl mx-auto">
+                    <div className="bg-white bg-opacity-90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white border-opacity-20">
+                        <h3 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6 text-center">
+                            💡 Consejos para Mejorar tu Perfil
+                        </h3>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div className="flex items-start space-x-4">
+                                <div className="bg-green-100 text-green-600 rounded-full p-2 flex-shrink-0">
+                                    <i className="bi bi-check-lg text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-gray-800 mb-1">Fotos de Calidad</h4>
+                                    <p className="text-gray-600 text-sm">Tienes buenas fotos que muestran tu personalidad</p>
+                                </div>
+                            </div>
+                            
+                            <div className="flex items-start space-x-4">
+                                <div className="bg-yellow-100 text-yellow-600 rounded-full p-2 flex-shrink-0">
+                                    <i className="bi bi-exclamation-triangle text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-gray-800 mb-1">Más Detalles</h4>
+                                    <p className="text-gray-600 text-sm">Agrega más información sobre tus hobbies</p>
+                                </div>
+                            </div>
+                            
+                            <div className="flex items-start space-x-4">
+                                <div className="bg-blue-100 text-blue-600 rounded-full p-2 flex-shrink-0">
+                                    <i className="bi bi-info-circle text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-gray-800 mb-1">Bio Atractiva</h4>
+                                    <p className="text-gray-600 text-sm">Tu descripción es interesante y genuina</p>
+                                </div>
+                            </div>
+                            
+                            <div className="flex items-start space-x-4">
+                                <div className="bg-red-100 text-red-600 rounded-full p-2 flex-shrink-0">
+                                    <i className="bi bi-x-lg text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 className="font-semibold text-gray-800 mb-1">Verificación</h4>
+                                    <p className="text-gray-600 text-sm">Considera verificar tu cuenta para más confianza</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex justify-center space-x-6">
+                            <button className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <i className="bi bi-pencil mr-2"></i>
+                                Editar Perfil
+                            </button>
+                            <button className="bg-white bg-opacity-80 backdrop-blur-sm border-2 border-indigo-300 text-indigo-600 hover:text-indigo-700 px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                                <i className="bi bi-camera mr-2"></i>
+                                Cambiar Fotos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+};
+
+export default Previa;

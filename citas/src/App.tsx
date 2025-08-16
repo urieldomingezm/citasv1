@@ -3,6 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import UserHome from './pages/usuario/home';
+import Matches from './pages/usuario/matches'; // Asegúrate de que la ruta de importación sea correcta
+import Mensajes from './pages/usuario/mensajes';
+import Perfil from './pages/usuario/perfil';
+import Descubrir from './pages/usuario/descubrir';
+import Previa from './pages/usuario/previa';
+import Fotos from './pages/usuario/fotos';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
 // Componente para rutas protegidas
@@ -32,6 +38,54 @@ const AppContent: React.FC = () => {
         />
         
         {/* Rutas protegidas para usuarios autenticados */}
+        <Route 
+          path="/usuario/descubrir" 
+          element={
+            <ProtectedRoute>
+              <Descubrir />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/usuario/matches" 
+          element={
+            <ProtectedRoute>
+              <Matches />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/usuario/mensajes" 
+          element={
+            <ProtectedRoute>
+              <Mensajes />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/usuario/perfil" 
+          element={
+            <ProtectedRoute>
+              <Perfil />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/usuario/previa" 
+          element={
+            <ProtectedRoute>
+              <Previa />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/usuario/fotos" 
+          element={
+            <ProtectedRoute>
+              <Fotos />
+            </ProtectedRoute>
+          } 
+        />
         <Route 
           path="/usuario/home" 
           element={
