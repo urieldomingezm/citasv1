@@ -1,4 +1,5 @@
 import React from 'react';
+import { themeClasses } from '../../themes';
 
 interface MenuPrimerNivelProps {
     onItemClick?: () => void;
@@ -22,7 +23,7 @@ const MenuPrimerNivel: React.FC<MenuPrimerNivelProps> = ({ onItemClick, onLoginC
             <li>
                 <a
                     href="#"
-                    className="block py-2 px-3 rounded hover:bg-gray-200 flex items-center space-x-2"
+                    className={`block py-2 px-3 rounded ${themeClasses.hover} hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-700 dark:text-gray-300 transition-colors duration-200`}
                     onClick={onItemClick}
                 >
                     <i className="bi bi-house"></i>
@@ -31,7 +32,7 @@ const MenuPrimerNivel: React.FC<MenuPrimerNivelProps> = ({ onItemClick, onLoginC
             </li>
             <li>
                 <button
-                    className="w-full text-left block py-2 px-3 rounded hover:bg-gray-200 flex items-center space-x-2"
+                    className={`w-full text-left block py-2 px-3 rounded ${themeClasses.hover} hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-700 dark:text-gray-300 transition-colors duration-200`}
                     onClick={handleLoginClick}
                 >
                     <i className="bi bi-box-arrow-in-right"></i>
@@ -40,7 +41,7 @@ const MenuPrimerNivel: React.FC<MenuPrimerNivelProps> = ({ onItemClick, onLoginC
             </li>
             <li>
                 <button
-                    className="w-full text-left block py-2 px-3 rounded hover:bg-gray-200 flex items-center space-x-2"
+                    className={`w-full text-left block py-2 px-3 rounded ${themeClasses.hover} hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-700 dark:text-gray-300 transition-colors duration-200`}
                     onClick={handleRegisterClick}
                 >
                     <i className="bi bi-person-plus"></i>

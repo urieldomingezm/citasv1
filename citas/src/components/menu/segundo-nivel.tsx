@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ThemeSelector from '../ThemeSelector';
+import { themeClasses } from '../../themes';
 
 interface MenuSegundoNivelProps {
     onItemClick?: () => void;
@@ -26,30 +27,30 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
     };
 
     return (
-        <div>
+        <div className={`${themeClasses.background} bg-white dark:bg-gray-800 transition-colors duration-300 min-h-full w-full flex flex-col`}>
             {/* Perfil del usuario en la parte superior */}
-            <div className="p-3 bg-gradient-to-r from-pink-50 to-purple-50 border-b dark:bg-gradient-to-r dark:from-gray-800 dark:to-gray-700 dark:border-gray-600">
+            <div className={`p-3 bg-gradient-to-r from-pink-50 to-purple-50 dark:from-gray-700 dark:to-gray-600 ${themeClasses.border} border-b border-gray-200 dark:border-gray-600`}>
                 <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-500 dark:from-pink-500 dark:to-purple-600 rounded-full flex items-center justify-center">
                         <i className="bi bi-person text-white text-xl"></i>
                     </div>
                     <div className="flex-1">
-                        <h4 className="font-semibold text-gray-800 dark:text-white">Usuario Demo</h4>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">Perfil al 95% completo</p>
-                        <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-1.5 mt-1">
-                            <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '95%' }}></div>
+                        <h4 className={`font-semibold ${themeClasses.text} text-gray-800 dark:text-white`}>Usuario Demo</h4>
+                        <p className={`text-xs ${themeClasses.textSecondary} text-gray-500 dark:text-gray-400`}>Perfil al 95% completo</p>
+                        <div className={`w-full ${themeClasses.backgroundTertiary} bg-gray-200 dark:bg-gray-600 rounded-full h-1.5 mt-1`}>
+                            <div className="bg-green-500 dark:bg-green-400 h-1.5 rounded-full" style={{ width: '95%' }}></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <ul className="flex flex-col p-2 space-y-1">
+            <ul className={`flex flex-col p-2 space-y-1 ${themeClasses.background} bg-white dark:bg-gray-800 flex-1 min-h-0`}>
 
             {/* Descubrir */}
             <li>
                 <Link
                     to="/usuario/descubrir"
-                    className="block py-2 px-3 rounded hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 text-gray-800 dark:text-gray-200 transition-colors"
+                    className={`block py-2 px-3 rounded ${themeClasses.hover} hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-800 dark:text-gray-200 transition-colors`}
                     onClick={onItemClick}
                 >
                     <i className="bi bi-search-heart text-pink-600 dark:text-pink-400"></i>
@@ -61,7 +62,7 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
             <li>
                 <Link
                     to="/usuario/mensajes"
-                    className="block py-2 px-3 rounded hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 text-gray-800 dark:text-gray-200 transition-colors"
+                    className={`block py-2 px-3 rounded ${themeClasses.hover} hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-800 dark:text-gray-200 transition-colors`}
                     onClick={onItemClick}
                 >
                     <i className="bi bi-chat-dots text-green-600 dark:text-green-400"></i>
@@ -74,7 +75,7 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
             <li>
                 <Link
                     to="/usuario/matches"
-                    className="block py-2 px-3 rounded hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 text-gray-800 dark:text-gray-200 transition-colors"
+                    className={`block py-2 px-3 rounded ${themeClasses.hover} hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-800 dark:text-gray-200 transition-colors`}
                     onClick={onItemClick}
                 >
                     <i className="bi bi-heart-fill text-red-600 dark:text-red-400"></i>
@@ -86,42 +87,42 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
             {/* Mi Perfil - Con Dropdown */}
             <li className="relative">
                 <button
-                    className="w-full text-left block py-2 px-3 rounded hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 text-gray-800 dark:text-gray-200 transition-colors"
+                    className={`w-full text-left block py-2 px-3 rounded ${themeClasses.hover} hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-800 dark:text-gray-200 transition-colors`}
                     onClick={() => toggleDropdown('perfil')}
                 >
                     <i className="bi bi-person-circle text-purple-600 dark:text-purple-400"></i>
                     <span>Mi Perfil</span>
-                    <i className={`bi bi-chevron-${activeDropdown === 'perfil' ? 'up' : 'down'} ml-auto text-gray-400 dark:text-gray-500`}></i>
+                    <i className={`bi bi-chevron-${activeDropdown === 'perfil' ? 'up' : 'down'} ml-auto ${themeClasses.textMuted} text-gray-400 dark:text-gray-500`}></i>
                 </button>
                 {activeDropdown === 'perfil' && (
                     <ul className="ml-4 mt-1 space-y-1">
                         <li>
                             <Link
                                 to="/usuario/perfil"
-                                className="block py-1 px-3 text-sm rounded hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-gray-700 dark:text-gray-300 transition-colors"
+                                className={`block py-1 px-3 text-sm rounded ${themeClasses.hover} hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-700 dark:text-gray-300 transition-colors`}
                                 onClick={onItemClick}
                             >
-                                <i className="bi bi-pencil text-gray-500 dark:text-gray-400"></i>
+                                <i className={`bi bi-pencil ${themeClasses.textSecondary} text-gray-500 dark:text-gray-400`}></i>
                                 <span>Editar Perfil</span>
                             </Link>
                         </li>
                         <li>
                             <Link
                                 to="/usuario/fotos"
-                                className="block py-1 px-3 text-sm rounded hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-gray-700 dark:text-gray-300 transition-colors"
+                                className={`block py-1 px-3 text-sm rounded ${themeClasses.hover} hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-700 dark:text-gray-300 transition-colors`}
                                 onClick={onItemClick}
                             >
-                                <i className="bi bi-images text-gray-500 dark:text-gray-400"></i>
+                                <i className={`bi bi-images ${themeClasses.textSecondary} text-gray-500 dark:text-gray-400`}></i>
                                 <span>Mis Fotos</span>
                             </Link>
                         </li>
                         <li>
                             <Link
                                 to="/usuario/previa"
-                                className="block py-1 px-3 text-sm rounded hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-gray-700 dark:text-gray-300 transition-colors"
+                                className={`block py-1 px-3 text-sm rounded ${themeClasses.hover} hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-700 dark:text-gray-300 transition-colors`}
                                 onClick={onItemClick}
                             >
-                                <i className="bi bi-eye text-gray-500 dark:text-gray-400"></i>
+                                <i className={`bi bi-eye ${themeClasses.textSecondary} text-gray-500 dark:text-gray-400`}></i>
                                 <span>Vista Previa</span>
                             </Link>
                         </li>
@@ -132,39 +133,39 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
             {/* Configuración - Con Dropdown */}
             <li className="relative">
                 <button
-                    className="w-full text-left block py-2 px-3 rounded hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 text-gray-800 dark:text-gray-200 transition-colors"
+                    className={`w-full text-left block py-2 px-3 rounded ${themeClasses.hover} hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-800 dark:text-gray-200 transition-colors`}
                     onClick={() => toggleDropdown('config')}
                 >
-                    <i className="bi bi-gear text-gray-600 dark:text-gray-400"></i>
+                    <i className={`bi bi-gear ${themeClasses.textSecondary} text-gray-600 dark:text-gray-400`}></i>
                     <span>Configuración</span>
-                    <i className={`bi bi-chevron-${activeDropdown === 'config' ? 'up' : 'down'} ml-auto text-gray-400 dark:text-gray-500`}></i>
+                    <i className={`bi bi-chevron-${activeDropdown === 'config' ? 'up' : 'down'} ml-auto ${themeClasses.textMuted} text-gray-400 dark:text-gray-500`}></i>
                 </button>
                 {activeDropdown === 'config' && (
                     <ul className="ml-4 mt-1 space-y-1">
                         <li>
                             <button
-                                className="w-full text-left block py-1 px-3 text-sm rounded hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-gray-700 dark:text-gray-300 transition-colors"
+                                className={`w-full text-left block py-1 px-3 text-sm rounded ${themeClasses.hover} hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-700 dark:text-gray-300 transition-colors`}
                                 onClick={() => openModal('notificaciones')}
                             >
-                                <i className="bi bi-bell text-gray-500 dark:text-gray-400"></i>
+                                <i className={`bi bi-bell ${themeClasses.textSecondary} text-gray-500 dark:text-gray-400`}></i>
                                 <span>Notificaciones</span>
                             </button>
                         </li>
                         <li>
                             <button
-                                className="w-full text-left block py-1 px-3 text-sm rounded hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-gray-700 dark:text-gray-300 transition-colors"
+                                className={`w-full text-left block py-1 px-3 text-sm rounded ${themeClasses.hover} hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-700 dark:text-gray-300 transition-colors`}
                                 onClick={() => openModal('privacidad')}
                             >
-                                <i className="bi bi-shield-check text-gray-500 dark:text-gray-400"></i>
+                                <i className={`bi bi-shield-check ${themeClasses.textSecondary} text-gray-500 dark:text-gray-400`}></i>
                                 <span>Privacidad</span>
                             </button>
                         </li>
                         <li>
                             <button
-                                className="w-full text-left block py-1 px-3 text-sm rounded hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 text-gray-700 dark:text-gray-300 transition-colors"
+                                className={`w-full text-left block py-1 px-3 text-sm rounded ${themeClasses.hover} hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-700 dark:text-gray-300 transition-colors`}
                                 onClick={() => openModal('preferencias')}
                             >
-                                <i className="bi bi-sliders text-gray-500 dark:text-gray-400"></i>
+                                <i className={`bi bi-sliders ${themeClasses.textSecondary} text-gray-500 dark:text-gray-400`}></i>
                                 <span>Preferencias</span>
                             </button>
                         </li>
@@ -176,7 +177,7 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
             <li>
                 <a
                     href="#"
-                    className="block py-2 px-3 rounded hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 text-yellow-600 dark:text-yellow-400 transition-colors"
+                    className={`block py-2 px-3 rounded ${themeClasses.hover} hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 text-yellow-600 dark:text-yellow-400 transition-colors`}
                     onClick={onItemClick}
                 >
                     <i className="bi bi-star-fill"></i>
@@ -189,7 +190,7 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
             <li>
                 <a
                     href="#"
-                    className="block py-2 px-3 rounded hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 text-gray-800 dark:text-gray-200 transition-colors"
+                    className={`block py-2 px-3 rounded ${themeClasses.hover} hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-800 dark:text-gray-200 transition-colors`}
                     onClick={onItemClick}
                 >
                     <i className="bi bi-question-circle text-blue-600 dark:text-blue-400"></i>
@@ -198,7 +199,7 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
             </li>
 
             {/* Separador */}
-            <li className="border-t border-gray-200 dark:border-gray-600 my-2"></li>
+            <li className={`${themeClasses.border} border-t border-gray-200 dark:border-gray-600 my-2`}></li>
 
             {/* Selector de tema */}
             <li>
@@ -210,7 +211,7 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
             {/* Cerrar Sesión */}
             <li>
                 <button
-                    className="w-full text-left block py-2 px-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 flex items-center space-x-2 text-red-600 dark:text-red-400 transition-colors"
+                    className={`w-full text-left block py-2 px-3 rounded hover:bg-red-50 dark:hover:bg-red-900/20 flex items-center space-x-2 text-red-600 dark:text-red-400 transition-colors ${themeClasses.hover}`}
                     onClick={handleLogout}
                 >
                     <i className="bi bi-box-arrow-right"></i>

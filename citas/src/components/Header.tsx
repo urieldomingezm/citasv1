@@ -5,6 +5,7 @@ import LoginModal from './modales/login/LoginModal';
 import { NotificacionesModal, PreferenciasModal, PrivacidadModal } from './modales/configuracion';
 // import RegisterModal from './modales/login/RegisterModal';
 import { useAuth } from '../context/AuthContext';
+import { themeClasses } from '../themes';
 import Alert from './Alert';
 
 const HeaderNavbar: React.FC = () => {
@@ -55,20 +56,20 @@ const HeaderNavbar: React.FC = () => {
                 <i className="bi bi-list" style={{ fontSize: '24px' }}></i>
             </button>
             {/* Offcanvas */}
-            <nav className={`fixed top-0 right-0 h-full w-64 bg-white text-gray-800 shadow-lg transform ${open ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-200 ease-in-out z-30`}>
-                <div className="flex items-center justify-between p-4 border-b">
+            <nav className={`fixed top-0 right-0 h-full w-64 ${themeClasses.background} bg-white dark:bg-gray-800 ${themeClasses.text} text-gray-800 dark:text-gray-200 shadow-lg transform ${open ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-200 ease-in-out z-30`}>
+                <div className={`flex items-center justify-between p-4 ${themeClasses.border} border-b border-gray-200 dark:border-gray-600`}>
                     <div className="flex flex-col">
-                        <span className="font-bold text-lg">
+                        <span className={`font-bold text-lg ${themeClasses.text}`}>
                             {isAuthenticated ? 'Mi Cuenta' : 'Menú'}
                         </span>
                         {isAuthenticated && user && (
-                            <span className="text-sm text-gray-500">
+                            <span className={`text-sm ${themeClasses.textSecondary} text-gray-500 dark:text-gray-400`}>
                                 Hola, {user.username}
                             </span>
                         )}
                     </div>
                     <button
-                        className="p-2"
+                        className={`p-2 ${themeClasses.text} ${themeClasses.hover} hover:bg-gray-100 dark:hover:bg-gray-700 rounded`}
                         onClick={() => setOpen(false)}
                         aria-label="Cerrar menú"
                     >
