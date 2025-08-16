@@ -68,7 +68,7 @@ const Mensajes: React.FC = () => {
                         <p className="text-xs sm:text-sm md:text-base text-gray-600">Mantente conectado con tus matches</p>
                     </div>
                     
-                    <div className="space-y-2 sm:space-y-3 md:space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                         {[
                             { id: 1, name: "Sofia Martinez", message: "Hola, ¿cómo estás? Me gustaría conocerte mejor y saber más sobre tus intereses...", time: "2h", unread: 3, online: true },
                             { id: 2, name: "Carmen López", message: "¿Te gustaría salir a tomar un café esta tarde?", time: "4h", unread: 1, online: true },
@@ -77,47 +77,51 @@ const Mensajes: React.FC = () => {
                             { id: 5, name: "Laura Torres", message: "¿Has visto la nueva película de...?", time: "3d", unread: 0, online: false },
                             { id: 6, name: "Elena Ruiz", message: "¡Hola! Vi que te gusta viajar, yo también", time: "1w", unread: 0, online: true }
                         ].map((chat) => (
-                            <div key={chat.id} className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-5 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-white border-opacity-50 hover:scale-102 group">
-                                <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
-                                    {/* Avatar responsivo */}
-                                    <div className="relative flex-shrink-0">
-                                        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-green-300 to-emerald-400 rounded-full flex items-center justify-center group-hover:from-green-400 group-hover:to-emerald-500 transition-all duration-300">
-                                            <i className="bi bi-person text-white text-sm sm:text-base md:text-lg lg:text-xl"></i>
+                            <div key={chat.id} className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-5 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-white border-opacity-50 hover:scale-102 group h-fit">
+                                {/* Avatar centrado en la parte superior */}
+                                <div className="flex flex-col items-center text-center mb-3">
+                                    <div className="relative">
+                                        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-gradient-to-br from-green-300 to-emerald-400 rounded-full flex items-center justify-center group-hover:from-green-400 group-hover:to-emerald-500 transition-all duration-300 mb-2">
+                                            <i className="bi bi-person text-white text-lg sm:text-xl md:text-2xl lg:text-3xl"></i>
                                         </div>
-                                        {/* Indicador online responsivo */}
+                                        {/* Indicador online */}
                                         {chat.online && (
-                                            <div className="absolute -bottom-0.5 sm:-bottom-1 -right-0.5 sm:-right-1 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
+                                            <div className="absolute -bottom-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
                                         )}
                                     </div>
                                     
-                                    {/* Contenido del mensaje */}
-                                    <div className="flex-1 min-w-0">
-                                        <div className="flex items-center justify-between mb-1">
-                                            <h4 className="font-semibold text-gray-800 text-sm sm:text-base md:text-lg truncate pr-2">
-                                                {chat.name}
-                                            </h4>
-                                            <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
-                                                <span className="text-xs sm:text-sm text-gray-400">{chat.time}</span>
-                                                {chat.online && (
-                                                    <i className="bi bi-circle-fill text-green-500 text-xs animate-pulse"></i>
-                                                )}
-                                            </div>
-                                        </div>
-                                        <p className="text-gray-500 text-xs sm:text-sm md:text-base truncate pr-2 leading-relaxed">
-                                            {chat.message}
-                                        </p>
+                                    {/* Nombre y tiempo */}
+                                    <div className="flex items-center justify-center space-x-2 mb-2">
+                                        <h4 className="font-semibold text-gray-800 text-sm sm:text-base md:text-lg">
+                                            {chat.name}
+                                        </h4>
+                                        {chat.online && (
+                                            <i className="bi bi-circle-fill text-green-500 text-xs animate-pulse"></i>
+                                        )}
                                     </div>
                                     
                                     {/* Badge de mensajes no leídos */}
-                                    <div className="text-center flex-shrink-0">
-                                        {chat.unread > 0 ? (
-                                            <div className="bg-gradient-to-br from-green-500 to-emerald-600 text-white text-xs sm:text-sm rounded-full w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 flex items-center justify-center font-bold shadow-lg animate-pulse">
-                                                {chat.unread}
-                                            </div>
-                                        ) : (
-                                            <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"></div>
-                                        )}
-                                    </div>
+                                    {chat.unread > 0 && (
+                                        <div className="bg-gradient-to-br from-red-500 to-pink-600 text-white text-xs rounded-full px-2 py-1 font-bold shadow-lg animate-pulse mb-2">
+                                            {chat.unread} nuevos
+                                        </div>
+                                    )}
+                                </div>
+                                
+                                {/* Contenido del mensaje */}
+                                <div className="text-center space-y-2">
+                                    <p className="text-gray-500 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                                        {chat.message}
+                                    </p>
+                                    <span className="text-xs text-gray-400 block">{chat.time}</span>
+                                </div>
+                                
+                                {/* Botón de acción */}
+                                <div className="mt-3 pt-3 border-t border-gray-100">
+                                    <button className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white py-2 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 transform hover:scale-105">
+                                        <i className="bi bi-chat-dots mr-2"></i>
+                                        Responder
+                                    </button>
                                 </div>
                             </div>
                         ))}
