@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import ThemeSelector from '../theme/ThemeSelector';
-import { themeClasses } from '../../themes';
+import ThemeSelector from '@components/theme/ThemeSelector';
+import { themeClasses } from '@themes/index';
 
 interface MenuSegundoNivelProps {
     onItemClick?: () => void;

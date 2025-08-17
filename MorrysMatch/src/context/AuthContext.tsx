@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import authService from '../services/authService';
-import { User, LoginRequest, RegisterRequest } from '../types';
+import authService from '@services/authService';
+import { User, LoginRequest, RegisterRequest } from '@/types';
 
 interface AuthContextType {
     isAuthenticated: boolean;

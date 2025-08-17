@@ -1,4 +1,4 @@
-import { SoapRequest, SoapResponse, SoapFault } from '../../types';
+import { SoapRequest, SoapResponse, SoapFault } from '@/types';
 
 // Cliente SOAP para servicios web
 class SoapClient {

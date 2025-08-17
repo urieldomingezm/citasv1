@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import UserHome from './pages/usuario/home';
-import Matches from './pages/usuario/matches';
-import Mensajes from './pages/usuario/mensajes';
-import Perfil from './pages/usuario/perfil';
-import Descubrir from './pages/usuario/descubrir';
-import Previa from './pages/usuario/previa';
-import Fotos from './pages/usuario/fotos';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import { LoadingProvider } from './context/LoadingContext';
-import { ThemeProvider } from './themes';
-import PageWrapper from './components/loading/PageWrapper';
+import Layout from '@components/Layout';
+import Home from '@pages/Home';
+import UserHome from '@pages/usuario/home';
+import Matches from '@pages/usuario/matches';
+import Mensajes from '@pages/usuario/mensajes';
+import Perfil from '@pages/usuario/perfil';
+import Descubrir from '@pages/usuario/descubrir';
+import Previa from '@pages/usuario/previa';
+import Fotos from '@pages/usuario/fotos';
+import { AuthProvider, useAuth } from '@context/AuthContext';
+import { LoadingProvider } from '@context/LoadingContext';
+import { ThemeProvider } from '@themes/index';
+import PageWrapper from '@components/loading/PageWrapper';
 
 // Componente para rutas protegidas
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {

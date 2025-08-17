@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../../context/AuthContext';
-import Alert from '../../alerts/login/Alert';
+import { useAuth } from '@context/AuthContext';
+import Alert from '@components/alerts/login/Alert';
 
 interface LoginModalProps {
     isOpen: boolean;

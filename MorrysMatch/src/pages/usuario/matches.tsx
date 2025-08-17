@@ -1,5 +1,5 @@
 import React from 'react';
-import { themeClasses } from '../../themes';
+import { themeClasses } from '@themes/index';
 
 const Matches: React.FC = () => {
     return (

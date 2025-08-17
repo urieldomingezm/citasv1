@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { themeClasses } from '../../themes';
-import MostrarFotoModal from '../../components/modales/fotos/mostrar-foto';
+import { themeClasses } from '@themes/index';
+import MostrarFotoModal from '@components/modales/fotos/mostrar-foto';
 
 const Fotos: React.FC = () => {
     const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);

@@ -1,7 +1,7 @@
-import HttpClient from '../api/httpClient';
-import SoapClient from '../soap/soapClient';
-import { API_CONFIG } from '../../config/api.config';
-import { ApiResponse, SoapRequest, ServiceConfig } from '../../types';
+import HttpClient from '@services/api/httpClient';
+import SoapClient from '@services/soap/soapClient';
+// import { API_CONFIG } from '@/config/api.config'; // Temporalmente comentado hasta crear el directorio config
+import { ApiResponse, SoapRequest, ServiceConfig } from '@/types';
 
 // Adaptador híbrido para manejar tanto REST como SOAP
 class HybridServiceAdapter {

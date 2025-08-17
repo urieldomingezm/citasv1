@@ -24,7 +24,8 @@
       "@config/*": ["src/config/*"],
       "@types/*": ["src/types/*"],
       "@assets/*": ["src/assets/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@themes/*": ["src/themes/*"]
     }
   },
   "include": ["src", "vite.config.ts"]

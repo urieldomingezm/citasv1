@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { themeClasses } from '../../themes';
+import { themeClasses } from '@themes/index';
 
 const Previa: React.FC = () => {
     const [currentPhoto, setCurrentPhoto] = useState(0);
