@@ -22,16 +22,13 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
     const [currentPath, setCurrentPath] = useState(location.pathname);
 
     useEffect(() => {
-        // Solo ejecutar si la ruta cambió
         if (currentPath !== location.pathname) {
             setCurrentPath(location.pathname);
             setIsPageLoading(true);
         }
 
-        // Configurar mensaje específico según la página
         const getPageMessage = () => {
             if (loadingMessage) return loadingMessage;
-            
             const path = location.pathname;
             if (path === '/') return 'Bienvenido a MorrysMatch...';
             if (path.includes('descubrir')) return 'Buscando perfiles increíbles para ti...';
@@ -46,7 +43,6 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
 
         const getPageType = () => {
             if (loadingType !== 'hearts') return loadingType;
-            
             const path = location.pathname;
             if (path === '/') return 'hearts';
             if (path.includes('descubrir')) return 'hearts';
@@ -58,15 +54,12 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
             return 'hearts';
         };
 
-        // Mostrar loading inmediatamente
         showLoading(getPageMessage(), getPageType());
 
     }, [location.pathname, showLoading, loadingMessage, loadingType]);
 
-    // Efecto separado para manejar cuando la página está lista
     useEffect(() => {
         if (isPageReady) {
-            // Pequeño delay para transición suave
             setTimeout(() => {
                 setIsPageLoading(false);
                 hideLoading();
