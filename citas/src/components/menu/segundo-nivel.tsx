@@ -7,9 +7,10 @@ interface MenuSegundoNivelProps {
     onItemClick?: () => void;
     onLogout?: () => void;
     onConfigModalOpen?: (modalName: string) => void;
+    onAyudaModalOpen?: () => void;
 }
 
-const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogout, onConfigModalOpen }) => {
+const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogout, onConfigModalOpen, onAyudaModalOpen }) => {
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
     const toggleDropdown = (dropdownName: string) => {
@@ -24,6 +25,11 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
     const handleLogout = () => {
         onLogout?.();
         onItemClick?.();
+    };
+
+    const openAyudaModal = () => {
+        onAyudaModalOpen?.();
+        onItemClick?.(); // Cerrar el menú móvil si está abierto
     };
 
     return (
@@ -188,14 +194,13 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
 
                 {/* Ayuda */}
                 <li>
-                    <a
-                        href="#"
-                        className={`block py-2 px-3 rounded ${themeClasses.hover} hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-800 dark:text-gray-200 transition-colors`}
-                        onClick={onItemClick}
+                    <button
+                        className={`w-full text-left block py-2 px-3 rounded ${themeClasses.hover} hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center space-x-2 ${themeClasses.text} text-gray-800 dark:text-gray-200 transition-colors`}
+                        onClick={openAyudaModal}
                     >
                         <i className="bi bi-question-circle text-blue-600 dark:text-blue-400"></i>
                         <span>Ayuda y Soporte</span>
-                    </a>
+                    </button>
                 </li>
 
                 {/* Separador */}

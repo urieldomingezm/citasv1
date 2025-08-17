@@ -10,7 +10,9 @@ import Descubrir from './pages/usuario/descubrir';
 import Previa from './pages/usuario/previa';
 import Fotos from './pages/usuario/fotos';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { LoadingProvider } from './context/LoadingContext';
 import { ThemeProvider } from './themes';
+import PageWrapper from './components/PageWrapper';
 
 // Componente para rutas protegidas
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -54,7 +56,9 @@ const AppContent: React.FC = () => {
           path="/" 
           element={
             <PublicRoute>
-              <Home />
+              <PageWrapper loadingMessage="Bienvenido a MorrysMatch..." loadingType="hearts">
+                <Home />
+              </PageWrapper>
             </PublicRoute>
           } 
         />
@@ -64,7 +68,9 @@ const AppContent: React.FC = () => {
           path="/usuario/descubrir" 
           element={
             <ProtectedRoute>
-              <Descubrir />
+              <PageWrapper>
+                <Descubrir />
+              </PageWrapper>
             </ProtectedRoute>
           } 
         />
@@ -72,7 +78,9 @@ const AppContent: React.FC = () => {
           path="/usuario/matches" 
           element={
             <ProtectedRoute>
-              <Matches />
+              <PageWrapper>
+                <Matches />
+              </PageWrapper>
             </ProtectedRoute>
           } 
         />
@@ -80,7 +88,9 @@ const AppContent: React.FC = () => {
           path="/usuario/mensajes" 
           element={
             <ProtectedRoute>
-              <Mensajes />
+              <PageWrapper>
+                <Mensajes />
+              </PageWrapper>
             </ProtectedRoute>
           } 
         />
@@ -88,7 +98,9 @@ const AppContent: React.FC = () => {
           path="/usuario/perfil" 
           element={
             <ProtectedRoute>
-              <Perfil />
+              <PageWrapper>
+                <Perfil />
+              </PageWrapper>
             </ProtectedRoute>
           } 
         />
@@ -96,7 +108,9 @@ const AppContent: React.FC = () => {
           path="/usuario/previa" 
           element={
             <ProtectedRoute>
-              <Previa />
+              <PageWrapper>
+                <Previa />
+              </PageWrapper>
             </ProtectedRoute>
           } 
         />
@@ -104,7 +118,9 @@ const AppContent: React.FC = () => {
           path="/usuario/fotos" 
           element={
             <ProtectedRoute>
-              <Fotos />
+              <PageWrapper>
+                <Fotos />
+              </PageWrapper>
             </ProtectedRoute>
           } 
         />
@@ -112,7 +128,9 @@ const AppContent: React.FC = () => {
           path="/usuario/home" 
           element={
             <ProtectedRoute>
-              <UserHome />
+              <PageWrapper>
+                <UserHome />
+              </PageWrapper>
             </ProtectedRoute>
           } 
         />
@@ -130,12 +148,14 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => (
   <ThemeProvider>
     <AuthProvider>
-      <Router future={{ 
-        v7_startTransition: true,
-        v7_relativeSplatPath: true 
-      }}>
-        <AppContent />
-      </Router>
+      <LoadingProvider>
+        <Router future={{ 
+          v7_startTransition: true,
+          v7_relativeSplatPath: true 
+        }}>
+          <AppContent />
+        </Router>
+      </LoadingProvider>
     </AuthProvider>
   </ThemeProvider>
 );

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MenuPrimerNivel from './menu/primer-nivel';
 import MenuSegundoNivel from './menu/segundo-nivel';
 import LoginModal from './modales/login/LoginModal';
+import AyudaModal from './modales/soporte/ayuda';
 import { NotificacionesModal, PreferenciasModal, PrivacidadModal } from './modales/configuracion';
 // import RegisterModal from './modales/login/RegisterModal';
 import { useAuth } from '../context/AuthContext';
@@ -14,6 +15,7 @@ const HeaderNavbar: React.FC = () => {
     const [registerModalOpen, setRegisterModalOpen] = useState(false);
     const [showLogoutAlert, setShowLogoutAlert] = useState(false);
     const [activeConfigModal, setActiveConfigModal] = useState<string | null>(null);
+    const [showAyudaModal, setShowAyudaModal] = useState(false);
     const { login, logout, isAuthenticated, user } = useAuth();
 
     const handleLoginSuccess = () => {
@@ -43,6 +45,15 @@ const HeaderNavbar: React.FC = () => {
 
     const closeConfigModal = () => {
         setActiveConfigModal(null);
+    };
+
+    const openAyudaModal = () => {
+        setShowAyudaModal(true);
+        setOpen(false); // Cerrar el menú cuando se abre el modal
+    };
+
+    const closeAyudaModal = () => {
+        setShowAyudaModal(false);
     };
 
     return (
@@ -81,6 +92,7 @@ const HeaderNavbar: React.FC = () => {
                         onItemClick={() => setOpen(false)}
                         onLogout={handleLogout}
                         onConfigModalOpen={openConfigModal}
+                        onAyudaModalOpen={openAyudaModal}
                     />
                 ) : (
                     <MenuPrimerNivel 
@@ -122,6 +134,12 @@ const HeaderNavbar: React.FC = () => {
             <PrivacidadModal 
                 isOpen={activeConfigModal === 'privacidad'} 
                 onClose={closeConfigModal} 
+            />
+            
+            {/* Modal de Ayuda */}
+            <AyudaModal 
+                isOpen={showAyudaModal} 
+                onClose={closeAyudaModal} 
             />
             
             {/* Alerta de cierre de sesión */}
