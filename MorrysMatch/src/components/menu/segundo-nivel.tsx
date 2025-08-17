@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import ThemeSelector from '../ThemeSelector';
+import ThemeSelector from '../theme/ThemeSelector';
 import { themeClasses } from '../../themes';
 
 interface MenuSegundoNivelProps {

@@ -1,8 +1,8 @@
 import React, { useEffect, ReactNode, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useLoading } from '../context/LoadingContext';
-import { usePageReady } from '../hooks/usePageReady';
-import Loading from '../components/loading/loading';
+import { useLoading } from '../../context/LoadingContext';
+import { usePageReady } from '../../hooks/usePageReady';
+import Loading from './loading';
 
 interface PageWrapperProps {
     children: ReactNode;

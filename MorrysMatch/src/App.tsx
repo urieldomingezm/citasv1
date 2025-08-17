@@ -12,7 +12,7 @@ import Fotos from './pages/usuario/fotos';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { LoadingProvider } from './context/LoadingContext';
 import { ThemeProvider } from './themes';
-import PageWrapper from './components/PageWrapper';
+import PageWrapper from './components/loading/PageWrapper';
 
 // Componente para rutas protegidas
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {

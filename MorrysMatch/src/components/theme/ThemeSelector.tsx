@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useTheme, themeClasses } from '../themes';
-import type { ThemeMode } from '../themes';
+import { useTheme, themeClasses } from '../../themes';
+import type { ThemeMode } from '../../themes';
 
 const ThemeSelector: React.FC = () => {
   const { theme, setTheme } = useTheme();

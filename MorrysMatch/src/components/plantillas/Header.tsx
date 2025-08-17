@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import MenuPrimerNivel from './menu/primer-nivel';
-import MenuSegundoNivel from './menu/segundo-nivel';
-import LoginModal from './modales/login/LoginModal';
-import AyudaModal from './modales/soporte/ayuda';
-import { NotificacionesModal, PreferenciasModal, PrivacidadModal } from './modales/configuracion';
+import MenuPrimerNivel from '../menu/primer-nivel';
+import MenuSegundoNivel from '../menu/segundo-nivel';
+import LoginModal from '../modales/login/LoginModal';
+import AyudaModal from '../modales/soporte/ayuda';
+import { NotificacionesModal, PreferenciasModal, PrivacidadModal } from '../modales/configuracion';
 // import RegisterModal from './modales/login/RegisterModal';
-import { useAuth } from '../context/AuthContext';
-import { themeClasses } from '../themes';
-import Alert from './Alert';
+import { useAuth } from '../../context/AuthContext';
+import { themeClasses } from '../../themes';
+import Alert from '../alerts/login/Alert';
 
 const HeaderNavbar: React.FC = () => {
     const [open, setOpen] = useState(false);
