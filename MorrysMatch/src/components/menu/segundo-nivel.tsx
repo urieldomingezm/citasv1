@@ -216,7 +216,7 @@ const MenuSegundoNivel: React.FC<MenuSegundoNivelProps> = ({ onItemClick, onLogo
                         className="text-red-600 dark:text-red-400 hover:text-red-800 dark:hover:text-red-200 transition-colors"
                         onClick={handleLogout}
                     >
-                        <i className="bi bi-box-arrow-right text-xl"></i>
+                        Cerrar sesión
                     </button>
                 </div>
             </ul>

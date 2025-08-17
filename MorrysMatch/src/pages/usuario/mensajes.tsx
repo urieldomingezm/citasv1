@@ -38,7 +38,7 @@ const Mensajes: React.FC = () => {
                         
                         {/* Card Online - Emerald/Teal */}
                         <div className={`${themeClasses.card} bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border-emerald-200 dark:border-emerald-700 hover:scale-105 group`}>
-                            <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-emerald-600 group-hover:to-teal-700 transition-all duration-300 shadow-md">
+                            <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-indigo-600 group-hover:to-purple-700 transition-all duration-300 shadow-md">
                                 <i className="bi bi-circle-fill text-black dark:text-white text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300 animate-pulse"></i>
                             </div>
                             <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-black dark:text-white mb-1">7</div>
@@ -47,7 +47,7 @@ const Mensajes: React.FC = () => {
                         
                         {/* Card Mensajes hoy - Amber/Orange */}
                         <div className={`${themeClasses.card} bg-opacity-90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 md:p-4 lg:p-5 text-center shadow-lg hover:shadow-xl transition-all duration-300 border-amber-200 dark:border-amber-700 hover:scale-105 group`}>
-                            <div className="bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-amber-600 group-hover:to-orange-700 transition-all duration-300 shadow-md">
+                            <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg sm:rounded-xl w-8 sm:w-10 md:w-12 lg:w-16 h-8 sm:h-10 md:h-12 lg:h-16 flex items-center justify-center mx-auto mb-1 sm:mb-2 md:mb-3 group-hover:from-indigo-600 group-hover:to-purple-700 transition-all duration-300 shadow-md">
                                 <i className="bi bi-lightning-charge text-black dark:text-white text-sm sm:text-base md:text-lg lg:text-2xl group-hover:scale-110 transition-transform duration-300"></i>
                             </div>
                             <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-black dark:text-white mb-1">48</div>
